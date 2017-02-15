@@ -11,7 +11,7 @@ class UserSignUp extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        const user = {
+        const signUpParams = {
             // set up exact as params in Rails DB
             first_name: this.refs.first_name.value,
             last_name: this.refs.last_name.value,
@@ -28,7 +28,7 @@ class UserSignUp extends Component {
             password: this.refs.userPassword.value,
             password_confirmation: this.refs.passwordConfirmation.value
         }
-        this.props.createUser(user)
+        this.props.createUser(signUpParams)
     }
 
     render() {
@@ -42,45 +42,45 @@ class UserSignUp extends Component {
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="first_name" placeholder="Enter First Name" value="rob"/>
+                    <input className="form-control" ref="first_name" placeholder="Enter First Name" />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="last_name">Last Name:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="last_name" placeholder="Enter Last Name" value="rob"/>
+                    <input className="form-control" ref="last_name" placeholder="Enter Last Name" />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="phone_number">Phone Number:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="phone_number" placeholder="Enter Phone Number" value="123-245-5432"/>
+                    <input className="form-control" ref="phone_number" placeholder="Enter Phone Number" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="email">Email:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="email" placeholder="Enter Email" value="rob@rob.com"/>
+                    <input className="form-control" ref="email" placeholder="Enter Email" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="street1">Address Line 1:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="street1" placeholder="Enter Address" value="123 High Street"/>
+                    <input className="form-control" ref="street1" placeholder="Enter Address" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="street2">Address Line 2:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="street2" placeholder="Enter Address" value="rob's Apartment"/>
+                    <input className="form-control" ref="street2" placeholder="Enter Address" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="city">City:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="city" placeholder="Enter City" value="New York"/>
+                    <input className="form-control" ref="city" placeholder="Enter City" />
 
                   </div>
                 </div>
@@ -88,48 +88,48 @@ class UserSignUp extends Component {
                   <label className="control-label col-sm-2" htmlFor="state">State:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" ref="state" placeholder="Enter state" value="New York"/>
+                    <input className="form-control" ref="state" placeholder="Enter state" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="zipcode">Zip Code:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" ref="zipcode" placeholder="Enter Zipcode" value="09010"/>
+                    <input className="form-control" ref="zipcode" placeholder="Enter Zipcode" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="chef_biography">Short Bio:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" ref="chef_biography" placeholder="Tell us about your cheffing experience!" value="sup dog?"/>
+                    <input className="form-control" ref="chef_biography" placeholder="Tell us about your cheffing experience!" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="instagram">Instagram:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" ref="instagram" placeholder="@TheAwesomeChef" value="@robhitt"/>
+                    <input className="form-control" ref="instagram" placeholder="@TheAwesomeChef" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="personal_website">Website:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" ref="personal_website" placeholder="www.awesomechef.com" value="coffee.com"/>
+                    <input className="form-control" ref="personal_website" placeholder="www.awesomechef.com" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="userPassword">Password:</label>
                   <div className="col-sm-10">
 
-                    <input className="form-control" type="password" ref="userPassword" placeholder="Enter Password" value="1234"/>
+                    <input className="form-control" type="password" ref="userPassword" placeholder="Enter Password" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="passwordConfirmation">Password Confirmation:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" type="password" ref="passwordConfirmation" placeholder="Verify Password" value="1234"/>
+                    <input className="form-control" type="password" ref="passwordConfirmation" placeholder="Verify Password" />
                   </div>
                 </div>
 

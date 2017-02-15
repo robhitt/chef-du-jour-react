@@ -1,9 +1,19 @@
 import React, {Component} from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import {logoutUser} from '../actions/index'
 
-export default class NavBar extends Component {
-  // constructor() {
-  //     super()
-  // }
+class NavBar extends Component {
+  constructor() {
+      super()
+
+      this.handleClick = this.handleClick.bind(this)
+  }
+
+handleClick(event){
+  event.preventDefault()
+  this.props.logoutUser()
+}
 
   render(){
     return(
@@ -19,8 +29,9 @@ export default class NavBar extends Component {
           </ul>
           <ul className="nav navbar-nav navbar-right">
             {/* <li><a href="#" className="btn btn-info" role="button">Sign Up</a></li> */}
-            <li className="active"><a href="./signup"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li className="active"><a href="./signup"><span className="glyphicon glyphicon-user"> SignUp</span></a></li>
+            <li><a href="./signin"><span className="glyphicon glyphicon-log-in"> Login</span></a></li>
+            <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"> Logout</span></a></li>
           </ul>
         </div>
       </nav>
@@ -29,3 +40,9 @@ export default class NavBar extends Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ logoutUser }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(NavBar)
