@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 
 export default class NavBar extends Component {
-  constructor() {
-      super()
-  }
+  // constructor() {
+  //     super()
+  // }
 
   render(){
     return(
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="nav navbar-nav">
-            <a href='./'><img src={'http://i64.tinypic.com/30s9fsg.png'} /></a>
+            <a href='./'><img src={'http://i64.tinypic.com/30s9fsg.png'} alt="Chef Du Jour Logo" /></a>
             {/* <a className="navbar-brand" href="#">Chef Du Jour</a> */}
           </div>
           <ul className="nav navbar-nav">
