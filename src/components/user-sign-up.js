@@ -35,7 +35,7 @@ class UserSignUp extends Component {
         return (
             <div className="container">
               <div>
-                <h3>Sign Up!</h3>
+                <h2>Sign Up For an Account on Chef Du Jour</h2>
               </div>
               <form className="form-horizontal" onSubmit={this.handleSubmit}>
 

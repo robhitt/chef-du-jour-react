@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NavBar from './NavBar'
 // import logo from './logo.svg';
 // import './App.css';
 // import UserSignUp from './user-sign-up'
@@ -8,7 +9,7 @@ class App extends Component {
         return (
             <div className="App">
               <div className="App-header">
-                <nav> Chef Du Jour NAV BAR </nav>
+                <NavBar />
               </div>
               {this.props.children}
             </div>
