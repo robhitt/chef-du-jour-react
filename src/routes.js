@@ -10,7 +10,6 @@ export default (
 )
 
 
-
 /* <Route path="user" component>
-  <Route path=":id" component/>
+<Route path=":id" component/>
 </Route>*/

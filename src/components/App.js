@@ -8,9 +8,9 @@ class App extends Component {
         return (
             <div className="App">
               <div className="App-header">
-                    <h2>Welcome to React</h2>
-                </div>
-                {this.props.children}
+                <nav> Chef Du Jour NAV BAR </nav>
+              </div>
+              {this.props.children}
             </div>
         );
     }
