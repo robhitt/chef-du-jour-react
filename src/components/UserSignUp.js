@@ -10,6 +10,7 @@ class UserSignUp extends Component {
     }
 
     handleSubmit(event) {
+      debugger
         event.preventDefault()
         const signUpParams = {
             // set up exact as params in Rails DB
