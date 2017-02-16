@@ -29,9 +29,9 @@ handleClick(event){
           </ul>
           <ul className="nav navbar-nav navbar-right">
             {/* <li><a href="#" className="btn btn-info" role="button">Sign Up</a></li> */}
-            <li className="active"><a href="./signup"><span className="glyphicon glyphicon-user"> SignUp</span></a></li>
-            <li><a href="./signin"><span className="glyphicon glyphicon-log-in"> Login</span></a></li>
-            <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"> Logout</span></a></li>
+            <li className="active"><a href="./signup"><span className="glyphicon glyphicon-user" /> SignUp</a></li>
+            <li><a href="./signin"><span className="glyphicon glyphicon-log-in" /> Login</a></li>
+            <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out" /> Logout</a></li>
           </ul>
         </div>
       </nav>
