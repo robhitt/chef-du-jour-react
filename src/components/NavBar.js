@@ -18,7 +18,7 @@ handleClick(event){
 renderExperience(){
   if(!!sessionStorage.getItem('jwt')){
     console.log(this.props.user)
-    return <li><Link to={`/user/create-dining-experience`}>Create a Dining Experience</Link></li>
+    return <li><Link to={`/user/create-dining-experience`}>Become a Chef</Link></li>
   }
 }
 
@@ -31,7 +31,7 @@ renderExperience(){
             {/* <a className="navbar-brand" href="#">Chef Du Jour</a> */}
           </div>
           <ul className="nav navbar-nav">
-            <li><a href="#">Choose a Chef</a></li>
+            <li><a href="#">Reserve a Chef</a></li>
             {this.renderExperience()}
           </ul>
           <ul className="nav navbar-nav navbar-right">

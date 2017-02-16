@@ -8,7 +8,7 @@ export const loginUser = ( loginParams ) => {
 const user =  axios.post('/signin', loginParams)
 .then( (response) => {
     sessionStorage.setItem('jwt', response.data.jwt)
-    browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
+    browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
     return response
   })
   console.log(user)
@@ -31,7 +31,7 @@ export const createUser = ( signUpParams ) => {
   const user = axios.post('/signup', signUpParams)
   .then( (response) => {
     sessionStorage.setItem('jwt', response.data.jwt)
-    browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
+    browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
     return response
   }) //.catch( (error) => error )
   return {
