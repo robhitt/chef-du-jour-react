@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {logoutUser} from '../actions/index'
-
+import {Link} from 'react-router'
 class NavBar extends Component {
   constructor() {
       super()
@@ -15,6 +15,13 @@ handleClick(event){
   this.props.logoutUser()
 }
 
+renderExperience(){
+  if(!!sessionStorage.getItem('jwt')){
+    console.log(this.props.user)
+    return <li><Link to={`/user/create-dining-experience`}>Create a Dining Experience</Link></li>
+  }
+}
+
   render(){
     return(
       <nav className="navbar navbar-default">
@@ -25,7 +32,7 @@ handleClick(event){
           </div>
           <ul className="nav navbar-nav">
             <li><a href="#">Choose a Chef</a></li>
-            <li><a href="#">Become a Chef</a></li>
+            {this.renderExperience()}
           </ul>
           <ul className="nav navbar-nav navbar-right">
             {/* <li><a href="#" className="btn btn-info" role="button">Sign Up</a></li> */}
@@ -41,8 +48,14 @@ handleClick(event){
   }
 }
 
+function mapStateToProps(state, ownprops){
+  return {
+    user: state.users
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ logoutUser }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
