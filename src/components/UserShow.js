@@ -15,6 +15,7 @@ class UserShow extends Component {
 
   render(){
     return(
+
       <div>
         <h2>UserShow</h2>
         <div className="container-fluid">
