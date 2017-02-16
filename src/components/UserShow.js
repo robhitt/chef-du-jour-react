@@ -7,7 +7,9 @@ export default class UserShow extends Component {
 
   render(){
     return(
-      <div><h2> UserShow </h2> </div>
+      <div><h2> UserShow </h2>
+      {this.props.children}
+      </div>
     )
   }
 }
