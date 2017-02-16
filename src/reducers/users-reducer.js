@@ -4,6 +4,9 @@ export default function usersReducer(state={}, action){
       return action.payload.data
     case "LOGIN_USER":
       return action.payload.data
+    case "SHOW_USER_INFO":
+    
+      return action.payload.data
     case "LOGOUT_USER":
       return {}
     default:

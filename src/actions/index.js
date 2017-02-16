@@ -34,11 +34,23 @@ export const createUser = ( signUpParams ) => {
     browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
     return response
   }) //.catch( (error) => error )
-  return{
+  return {
     type: 'CREATE_USER',
     payload: user
   }
 }
+
+export const showUser = ( userId ) => {
+  const user = axios.get(`/users/${userId}`)
+  .then( (response) => {
+    return response
+  })
+  return {
+    type: 'SHOW_USER_INFO',
+    payload: user
+  }
+}
+
 // if (response.error) {
 //   return {
 //     type: 'USER_EXISTS',
