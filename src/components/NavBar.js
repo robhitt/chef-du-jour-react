@@ -27,7 +27,7 @@ renderExperience(){
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="nav navbar-nav">
-            <a href='./'><img src={'http://i64.tinypic.com/30s9fsg.png'} alt="Chef Du Jour Logo" /></a>
+            <Link to='/'><img src={'http://i64.tinypic.com/30s9fsg.png'} alt="Chef Du Jour Logo" /></Link>
             {/* <a className="navbar-brand" href="#">Chef Du Jour</a> */}
           </div>
           <ul className="nav navbar-nav">
@@ -36,9 +36,9 @@ renderExperience(){
           </ul>
           <ul className="nav navbar-nav navbar-right">
             {/* <li><a href="#" className="btn btn-info" role="button">Sign Up</a></li> */}
-            <li className="active"><a href="./signup"><span className="glyphicon glyphicon-user"> SignUp</span></a></li>
-            <li><a href="./signin"><span className="glyphicon glyphicon-log-in"> Login</span></a></li>
-            <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"> Logout</span></a></li>
+            <li className="active"><Link to={"/signup"}><span className="glyphicon glyphicon-user"/> SignUp</Link></li>
+            <li><Link to={"/signin"}><span className="glyphicon glyphicon-log-in"/> Login</Link></li>
+            <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"/> Logout</a></li>
           </ul>
         </div>
       </nav>
