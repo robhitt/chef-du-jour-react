@@ -4,7 +4,6 @@ export default function diningExperiencesReducer(state = [], action){
       return action.payload
     default:
     return state
-
   }
 }
 

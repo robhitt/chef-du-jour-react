@@ -9,7 +9,7 @@ class UserShow extends Component {
       super(props)
   }
 
-  componentDidMount(){
+  componentDidMount(props){
     this.props.showUser(this.props.routeParams.id)
   }
 

@@ -41,13 +41,24 @@ export const createUser = ( signUpParams ) => {
 }
 
 export const showUser = ( userId ) => {
-  const user = axios.get(`/users/${userId}`)
-  .then( (response) => {
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const user = axios.get(`/users/${userId}`).then( (response) => {
     return response
   })
   return {
     type: 'SHOW_USER_INFO',
     payload: user
+  }
+}
+
+export const createDiningExperience = (diningExperienceParams) => {
+  axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const diningExperience = axios.post(`/dining_experiences`, diningExperienceParams).then((response)=>{
+    return response
+  })
+  return{
+    type: 'CREATE_DINING_EXPERIENCE',
+    payload: diningExperience
   }
 }
 
