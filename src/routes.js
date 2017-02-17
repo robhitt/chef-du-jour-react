@@ -18,10 +18,10 @@ export default (
 
     <Route path="user">
       <Route path="create-dining-experience" component={CreateDiningExperience} />
-      <Route path=":id" component={ UserShow }>
-        <Route path="my_dining_experiences" component={MyDiningExperiences}/>
-          <Route path=":id" component={MyDiningExperience}/>
-        </Route>
+      <Route path=":id" component={ UserShow }/>
+
+      <Route path=":id/my_dining_experiences" component={MyDiningExperiences}/>
+      <Route path=":id/my_dining_experiences/:dining_experience_id" component={MyDiningExperience}/>
     </Route>
 
 
