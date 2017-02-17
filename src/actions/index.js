@@ -7,7 +7,7 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 export const loginUser = (loginParams) => {
     const user = axios.post('/signin', loginParams).then((response) => {
         sessionStorage.setItem('jwt', response.data.jwt)
-        browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
+        browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
     })
     console.log(user)
@@ -49,6 +49,27 @@ export const createDiningExperience = (diningExperienceParams) => {
   return{
     type: 'CREATE_DINING_EXPERIENCE',
     payload: diningExperience
+  }
+}
+
+export const fetchDiningExperiences = () => {
+  const diningExperiences = axios.get(`/dining_experiences`).then( (response) => {
+    return response
+  })
+  return {
+    type: "FETCH_DINING_EXPERIENCES",
+    payload: diningExperiences
+  }
+}
+
+export const reserveDiningExperience = (diningExperienceId) => {
+  axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
+    return response
+  })
+  return {
+    type: "REQUEST_RESERVATION",
+    payload: reservationRequest
   }
 }
 

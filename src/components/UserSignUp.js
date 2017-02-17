@@ -10,7 +10,6 @@ class UserSignUp extends Component {
     }
 
     handleSubmit(event) {
-      debugger
         event.preventDefault()
         const signUpParams = {
             // set up exact as params in Rails DB
@@ -34,6 +33,7 @@ class UserSignUp extends Component {
 
     render() {
         return (
+
             <div className="container">
               <div>
                 <h2>Sign Up For an Account on Chef Du Jour</h2>
