@@ -27,7 +27,13 @@ renderExperience() {
 
         </ul>
         <ul className="nav navbar-nav navbar-right">
+
+
+          
           <li><Link to={`/user/${this.props.user.id}`}><span className="glyphicon glyphicon-user"/> Hi {this.props.user.first_name}!</Link></li>
+
+
+
           <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"/> Logout</a></li>
         </ul>
       </div>

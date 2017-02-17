@@ -67,7 +67,7 @@ export const reserveDiningExperience = (diningExperienceId) => {
     return response
   })
   return {
-    type: "REQUEST_RESERVATION",
+    type: "REQUEST_RESERVATION"
     payload: reservationRequest
   }
 }

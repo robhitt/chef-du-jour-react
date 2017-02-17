@@ -8,6 +8,7 @@ import Reservation from './components/Reservation'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import MyDiningExperience from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/DiningExperienceIndex"
+import UserEdit from "./components/UserEdit"
 
 export default (
   <Route path="/" component={ App }>
@@ -15,11 +16,10 @@ export default (
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
     <Route path="reservations" component={ Reservation } />
-
+    <Route path="user_edit" component={ UserEdit } />
     <Route path="user">
       <Route path="create-dining-experience" component={CreateDiningExperience} />
       <Route path=":id" component={ UserShow }/>
-
       <Route path=":id/my_dining_experiences" component={MyDiningExperiences}/>
       <Route path=":id/my_dining_experiences/:dining_experience_id" component={MyDiningExperience}/>
     </Route>
