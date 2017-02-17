@@ -17,7 +17,6 @@ class NavBar extends Component {
 
 renderExperience() {
   if (!!sessionStorage.getItem('jwt')) {
-    console.log(this.props.user)
     return (
       <div>
         <ul className="nav navbar-nav">
