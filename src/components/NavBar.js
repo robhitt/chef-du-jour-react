@@ -17,12 +17,14 @@ class NavBar extends Component {
 
 renderExperience() {
   if (!!sessionStorage.getItem('jwt')) {
-    console.log(this.props.user)
     return (
       <div>
         <ul className="nav navbar-nav">
           <li><Link to='/reservations'><span className="glyphicon glyphicon-cutlery"/>Reserve a Chef</Link></li>
           <li><Link to={`/user/create-dining-experience`}><span className="glyphicon glyphicon-sunglasses"/>Become a Chef</Link></li>
+          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><spann className="glyphicon glyphicon-sunglasses"/> Your Dining Experiences</Link></li>
+
+
         </ul>
         <ul className="nav navbar-nav navbar-right">
 

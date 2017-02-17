@@ -10,7 +10,6 @@ export const loginUser = (loginParams) => {
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
     })
-    console.log(user)
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -24,7 +23,6 @@ export const createUser = (signUpParams) => {
     const user = axios.post('/signup', signUpParams).then((response) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
-        console.log(response)
         return response
     }) //.catch( (error) => error )
     return {type: 'CREATE_USER', payload: user}
@@ -65,6 +63,7 @@ export const fetchDiningExperiences = () => {
 export const reserveDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
+    console.log(response)
     return response
   })
   return {
