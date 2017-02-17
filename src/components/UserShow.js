@@ -123,6 +123,7 @@ class UserShow extends Component {
 
         </div>
         <Link to={"/"}>Edit</Link>
+        {this.props.children}
       </div>
 
     )
