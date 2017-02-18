@@ -29,7 +29,7 @@ export const createUser = (signUpParams) => {
 }
 
 export const showUser = ( userId ) => {
-axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
   const user = axios.get(`/users/${userId}`).then( (response) => {
     return response
   })
