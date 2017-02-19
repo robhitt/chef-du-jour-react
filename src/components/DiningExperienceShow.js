@@ -17,7 +17,7 @@ class DiningExperienceShow extends Component {
 
   render(){
     return(
-     <div>HELLO BUDDY</div>
+     <div></div>
    )
   }
 }
