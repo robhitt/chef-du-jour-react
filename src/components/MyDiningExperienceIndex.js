@@ -13,7 +13,6 @@ import {Link} from 'react-router'
       this.props.fetchMyDiningExperiences(parseInt(this.props.params.id))
     }
 
-
   render(){
 
     const myDiningExperiences= this.props.myDiningExperiences
@@ -23,11 +22,9 @@ import {Link} from 'react-router'
       <h2>Your Bookable Dining Experiences</h2>
         <div className="row">
         {myDiningExperiences.map((my_dining_experience) => {
-          const userId = my_dining_experience.user.id
-          
           return(
             <div key={my_dining_experience.id}>
-                  <h5><Link to={`user/${userId}/my_dining_experiences/${my_dining_experience.id}`} >{ my_dining_experience.title }</Link></h5>
+                  <h5><Link to={`dining_experiences/${my_dining_experience.id}`} >{ my_dining_experience.title }</Link></h5>
                     <p>{my_dining_experience.description}</p><br/>
             </div>
           )
