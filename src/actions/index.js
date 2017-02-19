@@ -10,7 +10,6 @@ export const loginUser = (loginParams) => {
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
     })
-
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -64,6 +63,7 @@ export const fetchDiningExperiences = () => {
 export const reserveDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
+    console.log(response)
     return response
   })
   return {
