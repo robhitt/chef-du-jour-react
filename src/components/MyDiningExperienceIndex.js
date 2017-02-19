@@ -24,8 +24,10 @@ import {Link} from 'react-router'
         {myDiningExperiences.map((my_dining_experience) => {
           return(
             <div key={my_dining_experience.id}>
-                  <h5><Link to={`dining_experiences/${my_dining_experience.id}`} >{ my_dining_experience.title }</Link></h5>
+                  <h5>{ my_dining_experience.title }</h5>
                     <p>{my_dining_experience.description}</p><br/>
+                    <Link to={`/dining_experiences/${my_dining_experience.id}`}>< button type="button" className="btn btn-default">Preview</button></Link>
+                    <Link to={`/manage/${my_dining_experience.id}`}>< button type="button" className="btn btn-default">Edit</button></Link>
             </div>
           )
         }
