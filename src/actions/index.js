@@ -96,6 +96,12 @@ export const fetchMyDiningExperiences = (userId) => {
   }
 }
 
+export const editDiningExperience = (diningExperienceId) => {
+  return {
+    type: "EDIT_MY_DINING_EXPERIENCE"
+  }
+}
+
 // export const showMyDiningExperience = (props) => {
 //   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 //   const myDiningExperiences = axios.get(`/users/${userId}/my_dining_experiences/`).then((response) => {

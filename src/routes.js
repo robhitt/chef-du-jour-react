@@ -10,7 +10,7 @@ import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
 
 import UserEdit from "./components/UserEdit"
-
+import ManageMyDiningExperience from "./components/ManageMyDiningExperience"
 export default (
   <Route path="/" component={ App }>
 
@@ -22,6 +22,9 @@ export default (
       <Route path="create-dining-experience" component={CreateDiningExperience} />
       <Route path=":id" component={ UserShow }/>
       <Route path=":id/my_dining_experiences" component={MyDiningExperiences}/>
+    </Route>
+    <Route path="manage">
+      <Route path=":id" component={ManageMyDiningExperience}/>
     </Route>
     <Route path="dining_experiences">
       <Route path=":id" component={DiningExperienceShow}/>
