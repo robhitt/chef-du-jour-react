@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { fetchDiningExperiences, reserveDiningExperience } from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 // import {Link} from 'react-router'
 
 class Reservation extends Component {
@@ -34,7 +35,8 @@ class Reservation extends Component {
                   <div className="thumbnail">
                     <img src="..." alt="..."/>
                     <div className="caption">
-                      <h3>Dining Experience Title</h3>
+                      <Link to={`dining_experiences/${dining_experience.id}`} ><h3>{dining_experience.title }</h3></Link>
+
                       <p key={i}>{ dining_experience.description }</p>
                       <button id={ dining_experience.id } onClick={ this.handleClick.bind(this) } className="btn btn-primary">Reserve Me</button>
                     </div>

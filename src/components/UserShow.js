@@ -34,7 +34,7 @@ class UserShow extends Component {
               Last Name:
             </div>
             <div className="col-sm-10">
-
+              {this.props.users.last_name}
             </div>
           </div>
 

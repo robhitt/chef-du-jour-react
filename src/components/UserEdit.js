@@ -56,13 +56,13 @@ class UserEdit extends Component {
           <div>
             <h2>Edit your account</h2>
 
+            
           </div>
 
           <form className="form-horizontal" onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
               <div className="col-sm-10">
-
                 <input type="text" className="form-control" id="first_name" ref="first_name" value={this.props.users.first_name} onChange={this.handleChange.bind(this)} />
               </div>
             </div>
