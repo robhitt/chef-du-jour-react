@@ -34,6 +34,7 @@ class UserShow extends Component {
             Last Name:
           </div>
           <div className="col-sm-10">
+          {this.props.users.last_name}
 
           </div>
         </div>
@@ -122,7 +123,8 @@ class UserShow extends Component {
 
 
         </div>
-        <Link to={"/"}>Edit</Link>
+        <Link to={"/user_edit"}>Edit</Link>
+        {this.props.children}
       </div>
 
     )

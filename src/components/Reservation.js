@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { fetchDiningExperiences, reserveDiningExperience } from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 // import {Link} from 'react-router'
 
 class Reservation extends Component {
@@ -28,22 +29,21 @@ class Reservation extends Component {
           <h2> Reserve a Chef </h2>
           <div className="row">
             { dining_experiences.map((dining_experience, i) => {
-
-              // if (dining_experience.reservations.status === 'available') {
-                return(
-                  <div className="col-sm-6 col-md-4">
-                    <div className="thumbnail">
-                      <img src="..." alt="..."/>
-                      <div className="caption">
-                        <h3>Dining Experience Title</h3>
-                        <p key={i}>{ dining_experience.description }</p>
-                          <button id={ dining_experience.id } onClick={ this.handleClick.bind(this) } className="btn btn-primary">Reserve Me</button>
-                      </div>
+              //if (dining_experience.status === 'available') {
+              return(
+                <div className="col-sm-6 col-md-4">
+                  <div className="thumbnail">
+                    <img src="..." alt="..."/>
+                    <div className="caption">
+                      <Link to={`dining_experiences/${dining_experience.id}`} ><h3>{dining_experience.title }</h3></Link>
+                      <p key={i}>{ dining_experience.description }</p>
+                      <button id={ dining_experience.id } onClick={ this.handleClick.bind(this) } className="btn btn-primary">Reserve Me</button>
                     </div>
                   </div>
-                )
-              // }
-            }
+                </div>
+              )
+              //}
+              }
           )}
           </div>
         </div>
@@ -55,7 +55,6 @@ class Reservation extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return { dining_experiences: state.diningExperiences }
 }
 

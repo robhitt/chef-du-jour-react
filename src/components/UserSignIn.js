@@ -44,7 +44,7 @@ class UserSignIn extends Component {
                 <div className="form-group">
                   <div className="control-label col-sm-2"></div>
                   <div className="col-sm-10">
-                    <button className="btn btn-success btn-lg btn-block" type="submit">Submit</button>
+                    <button className="btn btn-info btn-lg btn-block" type="submit">Submit</button>
                   </div>
                 </div>
 
