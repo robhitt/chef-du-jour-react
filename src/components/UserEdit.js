@@ -6,15 +6,28 @@ import { showUser } from '../actions/index'
 import { Link } from 'react-router'
 
 class UserEdit extends Component {
-  constructor() {
-      super()
+  constructor(props) {
+      super(props)
       this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount(props) {
     this.props.showUser(this.props.routeParams.id)
-    debugger
   }
+
+  handleChange(event){
+  //{id: 2, title: 'React', body: 'd' }
+  let target = event.target
+  let key = target.id
+  const userParams = {}
+          userParams.id = this.props.users.id
+          userParams[key] = target.value
+    console.log(userParams)
+    // this.props.updateUser( userParams )
+  }
+//updateUser(params){
+//this.setState(params)
+//}
 
   handleSubmit(event) {
       event.preventDefault()
@@ -42,6 +55,7 @@ class UserEdit extends Component {
         <div className="container">
           <div>
             <h2>Edit your account</h2>
+
           </div>
 
           <form className="form-horizontal" onSubmit={this.handleSubmit}>
@@ -49,14 +63,14 @@ class UserEdit extends Component {
               <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
               <div className="col-sm-10">
 
-                <input className="form-control" ref="first_name" defaultValue="hi"  />
+                <input type="text" className="form-control" id="first_name" ref="first_name" value={this.props.users.first_name} onChange={this.handleChange.bind(this)} />
               </div>
             </div>
 
             <div className="form-group">
               <label className="control-label col-sm-2" htmlFor="last_name">Last Name:</label>
               <div className="col-sm-10">
-                <input className="form-control" ref="last_name" placeholder="Enter Last Name" />
+                <input type="text" className="form-control" id="last_name" ref="last_name" value={this.props.users.last_name} onChange={this.handleChange.bind(this)}  />
               </div>
             </div>
 
@@ -130,7 +144,7 @@ class UserEdit extends Component {
             <div className="form-group">
               <div className="control-label col-sm-2"></div>
               <div className="col-sm-10">
-                <button className="btn btn-info btn-lg btn-block" type="submit">Submit</button>
+                <button className="btn btn-info btn-lg btn-block" type="submit">Update</button>
               </div>
             </div>
 
@@ -148,4 +162,4 @@ function mapStateToProps(state) {
   return { users: state.users }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEdit)
+export default connect(mapStateToProps, mapDispatchToProps)( UserEdit )

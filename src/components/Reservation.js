@@ -28,7 +28,6 @@ class Reservation extends Component {
           <h2> Reserve a Chef </h2>
           <div className="row">
             { dining_experiences.map((dining_experience, i) => {
-              console.log(dining_experience)
               //if (dining_experience.status === 'available') {
               return(
                 <div className="col-sm-6 col-md-4">
