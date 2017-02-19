@@ -38,8 +38,9 @@ class UserEdit extends Component {
             <form className="form-horizontal" onSubmit={this.handleSubmit}>
 
               <div className="form-group">
-                <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
+                <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>  
                 <div className="col-sm-10">
+                <input className="form-control" ref="last_name" placeholder="Enter Last Name" />
                 </div>
               </div>
 
