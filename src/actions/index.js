@@ -10,7 +10,6 @@ export const loginUser = (loginParams) => {
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
     })
-
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -30,7 +29,7 @@ export const createUser = (signUpParams) => {
 }
 
 export const showUser = ( userId ) => {
-axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
   const user = axios.get(`/users/${userId}`).then( (response) => {
     return response
   })
@@ -64,6 +63,7 @@ export const fetchDiningExperiences = () => {
 export const reserveDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
+    console.log(response)
     return response
   })
   return {

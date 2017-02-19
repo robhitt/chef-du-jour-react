@@ -8,6 +8,7 @@ import Reservation from './components/Reservation'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
+
 import UserEdit from "./components/UserEdit"
 import ManageMyDiningExperience from "./components/ManageMyDiningExperience"
 export default (
