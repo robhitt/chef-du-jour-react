@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { fetchDiningExperiences, reserveDiningExperience } from '../actions'
+import { fetchAvaliableListings, reserveDiningExperience } from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
@@ -11,7 +11,7 @@ class Reservation extends Component {
   }
 
   componentDidMount(){
-      this.props.fetchDiningExperiences()
+      this.props.fetchAvaliableListings()
   }
 
   handleClick(event) {
@@ -21,14 +21,13 @@ class Reservation extends Component {
   }
 
   render() {
-    if (this.props.dining_experiences) {
-      const dining_experiences = this.props.dining_experiences
-
+    if (this.props.reservations) {
+      const availableListings = this.props.reservations
       return(
         <div>
           <h2> Reserve a Chef </h2>
           <div className="row">
-            { dining_experiences.map((dining_experience, i) => {
+            { availableListings.map((dining_experience, i) => {
               //if (dining_experience.status === 'available') {
               return(
                 <div className="col-sm-6 col-md-4" key={i}>
@@ -56,7 +55,7 @@ class Reservation extends Component {
 }
 
 function mapStateToProps(state) {
-  return { dining_experiences: state.diningExperiences }
+  return { reservations: state.reservations }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -66,7 +65,7 @@ function mapDispatchToProps(dispatch) {
   //     dispatch(action)
   //   }
   // }
-  return bindActionCreators({ fetchDiningExperiences, reserveDiningExperience }, dispatch)
+  return bindActionCreators({ fetchAvaliableListings, reserveDiningExperience }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Reservation)

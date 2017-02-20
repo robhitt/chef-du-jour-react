@@ -80,7 +80,6 @@ class UserEdit extends Component {
   }
 
   handleInputChange(event) {
-    // debugger
     this.setState({
       [event.target.id]: event.target.value,
     })

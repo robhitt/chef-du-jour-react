@@ -40,12 +40,11 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') /
 }
 
 export const editUser = ( editParams ) => {
-  // debugger
  // axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
  const user = axios.put(`/users/${editParams.id}`, editParams).then( (response) => {
 
     browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
-    debugger
+
     return response
   })
   return {
@@ -65,20 +64,20 @@ export const createDiningExperience = (diningExperienceParams) => {
   }
 }
 
-export const fetchDiningExperiences = () => {
-  const diningExperiences = axios.get(`/dining_experiences`).then( (response) => {
+export const fetchAvaliableListings = () => {
+  const availableListings = axios.get(`/reservations`).then( (response) => {
     return response
   })
   return {
-    type: "FETCH_DINING_EXPERIENCES",
-    payload: diningExperiences
+    type: "FETCH_AVAILABLE_LISTINGS",
+    payload: availableListings
   }
 }
 
 export const reserveDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
-    console.log(response)
+    browserHistory.push(`/reservations`)
     return response
   })
   return {
@@ -87,10 +86,8 @@ export const reserveDiningExperience = (diningExperienceId) => {
   }
 }
 // user/1/my-experiences/1
-
 export const diningExperienceShow = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
-
   const diningExperience = axios.get(`/dining_experiences/${diningExperienceId}`).then((response) => {
     return response
   })
