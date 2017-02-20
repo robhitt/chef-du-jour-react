@@ -18,9 +18,14 @@ import {Link} from 'react-router'
     const myDiningExperiences= this.props.myDiningExperiences
     return(
      <div>
-       <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
        <div className="well well-sm">
-         <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences </div>
+         <div>
+           <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
+         </div>
+         <div>
+           <Link to='/user/create-dining-experience'><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
+         </div>
+       </div>
        <div className="ui cards">
          {myDiningExperiences.map((my_dining_experience) => {
            return(

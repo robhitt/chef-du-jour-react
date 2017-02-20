@@ -23,9 +23,6 @@ class UserEdit extends Component {
         instagram: '',
         personal_website: '',
       }
-
-      console.log(props);
-
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleInputChange = this.handleInputChange.bind(this)
       this.setDefaultInput = this.setDefaultInput.bind(this)
@@ -70,8 +67,6 @@ class UserEdit extends Component {
       instagram,
       personal_website,
     });
-
-    // console.log(this.state.first_name);
   }
 
   setDefaultInput(key) {
@@ -110,7 +105,6 @@ class UserEdit extends Component {
       return (
 
         <div className="container">
-          {console.log(this.state)}
           <div>
             <h2>Edit your account</h2>
 
