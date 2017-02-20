@@ -19,30 +19,26 @@ import {Link} from 'react-router'
     return(
      <div>
        <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
-       <div className="well well-sm"><span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences</div>
+       <div className="well well-sm">
+         <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences </div>
        <div className="ui cards">
          {myDiningExperiences.map((my_dining_experience) => {
            return(
-
              <div className="card" key={my_dining_experience.id}>
                <div className="content">
                  <div className="header" key={my_dining_experience.id}>
-                   <Link to={`dining_experiences/${my_dining_experience.id}`} >{ my_dining_experience.title }</Link></div>
-                 <div className="description">{my_dining_experience.description}</div>
+                   <h5>{ my_dining_experience.title }</h5>
+                   <div className="description">{my_dining_experience.description}</div></div>
+                 <div>
+                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Preview</button></Link>
+                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Edit</button></Link></div>
                </div>
-               <div className="ui bottom attached btn btn-default">
-                 Edit Experience
-               </div>
-             </div>
-           )
-         }
-         )}
-       </div>
-
+             </div>)}
+         )} </div>
      </div>
-   )
-  }
-}
+       )
+             }
+           }
 
 
 
