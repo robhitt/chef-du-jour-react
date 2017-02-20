@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { showUser } from '../actions/index'
+import { showUser, deleteUser } from '../actions/index'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
@@ -16,10 +16,11 @@ class UserShow extends Component {
   }
 
   handleDelete() {
-
+    event.preventDefault() // Not sure if needed for a link
+    deleteUser(this.props.users.id) // sends action off
   }
 
-  render(){
+  render() {
     var personal_url = `http:\/\/${this.props.users.personal_website}`
 
     return(
@@ -42,116 +43,112 @@ class UserShow extends Component {
               Last Name:
             </div>
             <div className="col-sm-10">
-              
+              {this.props.users.last_name}
+            </div>
           </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            Phone Number:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.phone_number}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            Email:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.email}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            Street 1:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.street1}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            Street 2:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.street2}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            City:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.city}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            State:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.state}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-sm-2">
-            Zip Code:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.zipcode}
-          </div>
-        </div>
-
-
-        <div className="row">
-          <div className="col-sm-2">
-            Bio:
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.chef_biography}
-          </div>
-        </div>
-
-
-      
-        <div className="row">
-          <div className="col-sm-2">
-            Instagram
-          </div>
-          <div className="col-sm-10">
-            {this.props.users.instagram}
-          </div>
-        </div>
 
           <div className="row">
             <div className="col-sm-2">
-              Website
+              Phone Number:
             </div>
+            <div className="col-sm-10">
+              {this.props.users.phone_number}
+            </div>
+          </div>
 
+          <div className="row">
+            <div className="col-sm-2">
+              Email:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.email}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Street 1:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.street1}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Street 2:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.street2}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              City:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.city}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              State:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.state}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Zip Code:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.zipcode}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Bio:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.chef_biography}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Instagram:
+            </div>
+            <div className="col-sm-10">
+              {this.props.users.instagram}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-2">
+              Website:
+            </div>
             <div className="col-sm-10">
               <a href={personal_url}>{this.props.users.personal_website}</a>
             </div>
           </div>
 
           <p> </p>
-          <span className="button-seperator">
+
+          <span className="button-separator">
             <Link to={"/user_edit"}><button type="button" className="btn btn-primary btn-lg active">Edit Profile</button></Link>
           </span>
 
-          <span className="button-seperator">
+            <span className="button-separator">
             <button type="button" className="btn btn-danger btn-lg active" onClick={ this.handleDelete }>Delete Profile</button>
           </span>
-      
-      </div>
-      </div>
 
+        </div>
+      </div>
     )
   }
 }
@@ -163,7 +160,7 @@ function mapDispatchToProps(dispatch) {
   //     dispatch(action)
   //   }
   // }
-  return bindActionCreators({ showUser }, dispatch)
+  return bindActionCreators({ showUser, deleteUser }, dispatch)
 }
 
 function mapStateToProps(state){

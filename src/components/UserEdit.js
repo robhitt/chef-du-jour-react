@@ -24,7 +24,6 @@ class UserEdit extends Component {
         personal_website: '',
       }
 
-
       console.log(props);
 
       this.handleSubmit = this.handleSubmit.bind(this)
