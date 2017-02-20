@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {browserHistory} from 'react-router'
+import { browserHistory } from 'react-router'
 
 axios.defaults.baseURL = 'http://localhost:8080/api/v1'
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
@@ -40,15 +40,26 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') /
 }
 
 export const editUser = ( editParams ) => {
- // axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
+
+ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
  const user = axios.put(`/users/${editParams.id}`, editParams).then( (response) => {
-
-    browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
-
+    browserHistory.push(`/user/${response.data.id}`)
     return response
   })
   return {
     type: 'SHOW_USER_INFO',
+    payload: user
+  }
+}
+
+export const deleteUser = ( userId ) => {
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const user = axios.delete(`/users/${userId}`).then( (response) => {
+    browserHistory.push('/signup')
+    return response
+  })
+  return {
+    type: 'DELETED_USER',
     payload: user
   }
 }
