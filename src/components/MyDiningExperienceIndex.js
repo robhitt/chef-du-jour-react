@@ -30,8 +30,8 @@ import {Link} from 'react-router'
                    <h5>{ my_dining_experience.title }</h5>
                    <div className="description">{my_dining_experience.description}</div></div>
                  <div>
-                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Preview</button></Link>
-                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Edit</button></Link></div>
+                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default button-separator">Preview</button></Link>
+                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default pull-right">Edit</button></Link></div>
                </div>
              </div>)}
          )} </div>

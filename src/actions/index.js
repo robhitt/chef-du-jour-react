@@ -67,6 +67,7 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 export const createDiningExperience = (diningExperienceParams) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const diningExperience = axios.post(`/dining_experiences`, diningExperienceParams).then((response)=>{
+    browserHistory.push(`/user/${response.data.user.id}/my_dining_experiences`)
     return response
   })
   return{

@@ -19,6 +19,7 @@ handleSubmit(event){
     length: this.refs.length.value
   }
   this.props.createDiningExperience(createDiningExperienceParams)
+  // this.props.fetchDiningExperiences(this.props.user.id)
 }
 
   render(){
