@@ -13,7 +13,6 @@ import {Link} from 'react-router'
       this.props.fetchMyDiningExperiences(parseInt(this.props.params.id))
     }
 
-
   render(){
 
     const myDiningExperiences= this.props.myDiningExperiences
@@ -25,9 +24,10 @@ import {Link} from 'react-router'
          {myDiningExperiences.map((my_dining_experience) => {
            return(
 
-             <div className="card">
+             <div className="card" key={my_dining_experience.id}>
                <div className="content">
-                 <div className="header" key={my_dining_experience.id}>{ my_dining_experience.title }</div>
+                 <div className="header" key={my_dining_experience.id}>
+                   <Link to={`dining_experiences/${my_dining_experience.id}`} >{ my_dining_experience.title }</Link></div>
                  <div className="description">{my_dining_experience.description}</div>
                </div>
                <div className="ui bottom attached btn btn-default">
@@ -39,7 +39,7 @@ import {Link} from 'react-router'
          )}
        </div>
 
-             </div>
+     </div>
    )
   }
 }

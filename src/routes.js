@@ -6,8 +6,9 @@ import UserSignIn from './components/UserSignIn'
 import UserShow from './components/UserShow'
 import Reservation from './components/Reservation'
 import CreateDiningExperience from "./components/CreateDiningExperience"
-import MyDiningExperience from "./components/DiningExperienceShow"
-import MyDiningExperiences from "./components/DiningExperienceIndex"
+import DiningExperienceShow from "./components/DiningExperienceShow"
+import MyDiningExperiences from "./components/MyDiningExperienceIndex"
+
 import UserEdit from "./components/UserEdit"
 
 export default (
@@ -21,12 +22,16 @@ export default (
       <Route path="create-dining-experience" component={CreateDiningExperience} />
       <Route path=":id" component={ UserShow }/>
       <Route path=":id/my_dining_experiences" component={MyDiningExperiences}/>
-      <Route path=":id/my_dining_experiences/:dining_experience_id" component={MyDiningExperience}/>
+    </Route>
+    <Route path="dining_experiences">
+      <Route path=":id" component={DiningExperienceShow}/>
     </Route>
 
 
   </Route>
 )
+
+// <Route path=":id/my_dining_experiences/:dining_experience_id" component={MyDiningExperience}/>
 
     // add Link component to all links that use react router { Link } from 'react-router'
     // <a href="#" become <Link to={path} />

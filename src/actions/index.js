@@ -88,13 +88,14 @@ export const reserveDiningExperience = (diningExperienceId) => {
 }
 // user/1/my-experiences/1
 
-export const diningExperienceShow = () => {
+export const diningExperienceShow = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
-  const diningExperience = axios.get(`/dining_experiences/${sessionStorage.getItem('jwt')}`).then((response) => {
+
+  const diningExperience = axios.get(`/dining_experiences/${diningExperienceId}`).then((response) => {
     return response
   })
   return {
-    type: "REQUEST_RESERVATION",
+    type: "FETCH_DINING_EXPERIENCE_INFO",
     payload: diningExperience
   }
 }
@@ -109,6 +110,17 @@ export const fetchMyDiningExperiences = (userId) => {
     payload: myDiningExperiences
   }
 }
+
+// export const showMyDiningExperience = (props) => {
+//   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+//   const myDiningExperiences = axios.get(`/users/${userId}/my_dining_experiences/`).then((response) => {
+//     return response
+//   })
+//   return {
+//     type: "FETCH_MY_DINING_EXPERIENCES",
+//     payload: myDiningExperiences
+//   }
+// }
 
 // if (response.error) {
 //   return {
