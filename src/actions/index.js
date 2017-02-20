@@ -39,6 +39,21 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') /
   }
 }
 
+export const editUser = ( editParams ) => {
+  // debugger
+ // axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
+ const user = axios.put(`/users/${editParams.id}`, editParams).then( (response) => {
+
+    browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
+    debugger
+    return response
+  })
+  return {
+    type: 'SHOW_USER_INFO',
+    payload: user
+  }
+}
+
 export const createDiningExperience = (diningExperienceParams) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const diningExperience = axios.post(`/dining_experiences`, diningExperienceParams).then((response)=>{
