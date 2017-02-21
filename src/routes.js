@@ -4,7 +4,7 @@ import App from './components/App'
 import UserSignUp from './components/UserSignUp'
 import UserSignIn from './components/UserSignIn'
 import UserShow from './components/UserShow'
-import Reservation from './components/Reservation'
+import ReservationFinder from './components/ReservationFinder'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
@@ -16,7 +16,7 @@ export default (
 
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
-    <Route path="reservations" component={ Reservation } />
+    <Route path="reservation-finder" component={ ReservationFinder } />
     <Route path="user_edit" component={ UserEdit } />
     <Route path="user">
       <Route path="create-dining-experience" component={CreateDiningExperience} />

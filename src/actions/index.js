@@ -64,8 +64,8 @@ export const createDiningExperience = (diningExperienceParams) => {
   }
 }
 
-export const fetchAvaliableListings = () => {
-  const availableListings = axios.get(`/reservations`).then( (response) => {
+export const fetchAvaliableListings = (searchParams) => {
+  const availableListings = axios.get(`/reservations`,{params: searchParams}).then( (response) => {
     return response
   })
   return {
@@ -74,10 +74,10 @@ export const fetchAvaliableListings = () => {
   }
 }
 
-export const reserveDiningExperience = (diningExperienceId) => {
+export const reserveDiningExperience = (reservationParams) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
-  const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
-    browserHistory.push(`/reservations`)
+  const reservationRequest = axios.post(`/reservations`, reservationParams).then( (response) => {
+    browserHistory.push(`/reservation-finder`)
     return response
   })
   return {
