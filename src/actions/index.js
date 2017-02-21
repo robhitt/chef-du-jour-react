@@ -9,7 +9,7 @@ export const loginUser = (loginParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
-    })
+    }).catch( (error) => error )
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -24,7 +24,7 @@ export const createUser = (signUpParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`)
         return response
-    }) //.catch( (error) => error )
+    }).catch( (error) => error )
     return {type: 'CREATE_USER', payload: user}
 }
 
@@ -77,8 +77,9 @@ export const createDiningExperience = (diningExperienceParams) => {
   }
 }
 
-export const fetchAvaliableListings = () => {
-  const availableListings = axios.get(`/reservations`).then( (response) => {
+
+export const fetchAvaliableListings = (searchParams) => {
+  const availableListings = axios.get(`/reservations`,{params: searchParams}).then( (response) => {
     return response
   })
   return {
@@ -87,10 +88,10 @@ export const fetchAvaliableListings = () => {
   }
 }
 
-export const reserveDiningExperience = (diningExperienceId) => {
+export const reserveDiningExperience = (reservationParams) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
-  const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {
-    browserHistory.push(`/reservations`)
+  const reservationRequest = axios.post(`/reservations`, reservationParams).then( (response) => {
+    browserHistory.push(`/reservation-finder`)
     return response
   })
   return {
