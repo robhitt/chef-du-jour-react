@@ -25,7 +25,7 @@ class Reservation extends Component {
       const availableListings = this.props.reservations
       return(
         <div>
-          <h2> Reserve a Chef </h2>
+          <h2 className="text-center"> Reserve a Chef </h2>
           <div className="row">
             { availableListings.map((dining_experience, i) => {
               //if (dining_experience.status === 'available') {

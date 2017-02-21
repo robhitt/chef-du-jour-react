@@ -14,7 +14,7 @@ import UserEdit from "./components/UserEdit"
 import ManageMyDiningExperience from "./components/ManageMyDiningExperience"
 export default (
   <Route path="/" component={ App }>
-    <Route path="calendar" component={Calendar} />
+    <Route path="calendar" component={ Calendar } />
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
     <Route path="reservations" component={ Reservation } />

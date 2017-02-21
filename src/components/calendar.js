@@ -32,7 +32,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
         return (
             <div className= "container">
-              <div className="row">
+              <div className="row text-center">
                 <InfiniteCalendar width={360} height={265} selectedDate={this.today} minDate={this.today} maxDate={this.maxDate} keyboardSupport={true} min={this.min} max={this.maxDate} onSelect={this.handleClick.bind(this)} rowHeight={52}/>
                 <div>
                   <Reservation />
