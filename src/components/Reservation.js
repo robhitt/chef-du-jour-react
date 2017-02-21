@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { fetchAvaliableListings, reserveDiningExperience } from '../actions'
+import { reserveDiningExperience } from '../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
@@ -10,9 +10,9 @@ class Reservation extends Component {
       super()
   }
 
-  componentDidMount(){
-      this.props.fetchAvaliableListings()
-  }
+  // componentDidMount(){
+  //     this.props.fetchAvaliableListings()
+  // }
 
   handleClick(event) {
     event.preventDefault()
@@ -25,7 +25,7 @@ class Reservation extends Component {
       const availableListings = this.props.reservations
       return(
         <div>
-          <h2> Reserve a Chef </h2>
+          <h2 className="text-center"> Available Dining Experiences </h2>
           <div className="row">
             { availableListings.map((dining_experience, i) => {
               //if (dining_experience.status === 'available') {
@@ -65,10 +65,10 @@ function mapDispatchToProps(dispatch) {
   //     dispatch(action)
   //   }
   // }
-  return bindActionCreators({ fetchAvaliableListings, reserveDiningExperience }, dispatch)
+  return bindActionCreators({ reserveDiningExperience }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Reservation)
+export default connect(mapStateToProps, mapDispatchToProps)( Reservation )
   // Show all experiences
   //   All experiences must have a reserve button
   // OnClick connect experience to user, post request to API in the reservation action (index.js)
