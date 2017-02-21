@@ -1,6 +1,16 @@
+
+.background-photo {
+  margin-top: 0;
+  background-image: url("http://i66.tinypic.com/20hptar.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+
 .navbar-default {
   background-color: #30c4c9;
   border-color: #30c4c9;
+  margin-bottom:auto;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;

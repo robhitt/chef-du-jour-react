@@ -17,16 +17,18 @@ import {Link} from 'react-router'
 
     const myDiningExperiences= this.props.myDiningExperiences
     return(
-     <div>
-       <div className="well well-sm">
-         <div>
-           <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
-         </div>
-         <div>
-           <Link to='/user/create-dining-experience'><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
-         </div>
-       </div>
-       <div className="ui cards">
+         <div className="ui grid">
+           <div className="well text-center center">
+             <div className = "column">
+               <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
+             </div>
+             <div className="column">
+               <div className="btn btn-default">
+                 <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
+               </div>
+             </div>
+           </div>
+           <div className="ui cards well">
          {myDiningExperiences.map((my_dining_experience) => {
            return(
              <div className="card" key={my_dining_experience.id}>
