@@ -10,9 +10,9 @@ class Reservation extends Component {
       super()
   }
 
-  componentDidMount(){
-      this.props.fetchAvaliableListings()
-  }
+  // componentDidMount(){
+  //     this.props.fetchAvaliableListings()
+  // }
 
   handleClick(event) {
     event.preventDefault()
@@ -68,7 +68,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchAvaliableListings, reserveDiningExperience }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Reservation)
+export default connect(mapStateToProps, mapDispatchToProps)( Reservation )
   // Show all experiences
   //   All experiences must have a reserve button
   // OnClick connect experience to user, post request to API in the reservation action (index.js)

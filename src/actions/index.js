@@ -86,6 +86,16 @@ export const fetchAvaliableListings = () => {
   }
 }
 
+export const fetchAvaliableListingsByCalendar = (date) => {
+  const availableListings = axios.post(`/reservationsbyCalendar`, date).then( (response) => {
+    return response
+  })
+  return {
+    type: "FETCH_AVAILABLE_LISTINGS",
+    payload: availableListings
+  }
+}
+
 export const reserveDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const reservationRequest = axios.post(`/reservations`, diningExperienceId).then( (response) => {

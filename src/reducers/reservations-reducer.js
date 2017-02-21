@@ -9,6 +9,7 @@ export default function reservationsReducer(state=[], action){
     case "DELETE_RESERVATION":
       return {}
     case "FETCH_AVAILABLE_LISTINGS":
+    debugger
       return action.payload.data
     default:
       return state

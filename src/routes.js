@@ -8,13 +8,13 @@ import Reservation from './components/Reservation'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
-import calendar from "./components/calendar"
+import Calendar from "./components/Calendar"
 
 import UserEdit from "./components/UserEdit"
 import ManageMyDiningExperience from "./components/ManageMyDiningExperience"
 export default (
   <Route path="/" component={ App }>
-    <Route path="calendar" component={calendar} />
+    <Route path="calendar" component={Calendar} />
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
     <Route path="reservations" component={ Reservation } />
