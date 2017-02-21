@@ -8,7 +8,6 @@ import ReservationFinder from './components/ReservationFinder'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
-import Calendar from "./components/Calendar"
 import Home from "./components/Home"
 
 import UserEdit from "./components/UserEdit"
@@ -24,10 +23,9 @@ const requireLogin = (nextState, replace) => {
 export default (
   <Route path="/" component={ App }>
     <IndexRoute component ={ Home } />
-    <Route path="reservations" component={ Calendar } onEnter ={ requireLogin }/>
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
-    <Route path="reservation-finder" component={ ReservationFinder } />
+    <Route path="reservation-finder" component={ ReservationFinder } onEnter ={ requireLogin } />
     <Route path="user_edit" component={ UserEdit } onEnter ={ requireLogin} />
     <Route path="user">
       <Route path="create-dining-experience" component={CreateDiningExperience} onEnter ={ requireLogin } />
