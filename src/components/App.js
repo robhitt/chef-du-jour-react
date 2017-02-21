@@ -5,6 +5,11 @@ import NavBar from './NavBar'
 // import UserSignUp from './UserSignUp'
 
 class App extends Component {
+
+  componentDidMount() {
+  
+  }
+
     render() {
         return (
 

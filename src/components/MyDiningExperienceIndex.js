@@ -28,9 +28,9 @@ import {Link} from 'react-router'
                </div>
              </div>
            </div>
+
            <div className="row">
              {myDiningExperiences.map((my_dining_experience) => {
-               debugger
                return(
                  <div className="col-sm-6 col-md-4" key={my_dining_experience.id}>
                    <div className="thumbnail">
@@ -41,6 +41,7 @@ import {Link} from 'react-router'
                      <div>
                        <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-info button-separator">Preview</button></Link>
                        <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-primary pull-right">Edit</button></Link></div>
+
                </div>
              </div>)}
          )} </div>

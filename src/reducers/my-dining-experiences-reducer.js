@@ -3,8 +3,14 @@ export default function myDiningExperiencesReducer(state = [], action){
     case "FETCH_MY_DINING_EXPERIENCES":
       return action.payload.data
     case "EDIT_MY_DINING_EXPERIENCE":
-      return []
+      return state.map( diningExperience => {
+        if ( diningExperience.id === action.payload.id ){
+          return action.payload
+        } else {
+          return diningExperience
+        }
+      })
     default:
-    return state
+      return state
   }
 }

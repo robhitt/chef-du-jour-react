@@ -4,7 +4,7 @@ import reservationsReducer from './reservations-reducer'
 import diningExperiencesReducer from './dining-experience-reducer'
 import myDiningExperiencesReducer from './my-dining-experiences-reducer'
 
-export default combineReducers({  
+export default combineReducers({
   users: usersReducer,
   reservations: reservationsReducer,
   diningExperiences: diningExperiencesReducer,
