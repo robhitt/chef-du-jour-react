@@ -18,6 +18,12 @@ class Calendar extends Component {
         this.maxDate = Number(new Date()) + (24 * 60 * 60 * 1000) * 7; // One week after today
 
     }
+    componentDidMount(){
+      let date = {
+        date: new Date().toDateString()
+        }
+        this.props.fetchAvaliableListingsByCalendar(date)
+     }
 
 handleClick(event){
   let date = {date: event.format("ddd, D MMM YYYY")}

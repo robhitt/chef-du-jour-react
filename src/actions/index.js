@@ -9,7 +9,7 @@ export const loginUser = (loginParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
-    })
+    }).catch( (error) => error )
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -24,7 +24,7 @@ export const createUser = (signUpParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
-    }) //.catch( (error) => error )
+    }).catch( (error) => error )
     return {type: 'CREATE_USER', payload: user}
 }
 
@@ -76,18 +76,18 @@ export const createDiningExperience = (diningExperienceParams) => {
   }
 }
 
-export const fetchAvaliableListings = () => {
-  const availableListings = axios.get(`/reservations`).then( (response) => {
-    return response
-  })
-  return {
-    type: "FETCH_AVAILABLE_LISTINGS",
-    payload: availableListings
-  }
-}
+// export const fetchAvaliableListings = () => {
+//   const availableListings = axios.get(`/reservations`).then( (response) => {
+//     return response
+//   })
+//   return {
+//     type: "FETCH_AVAILABLE_LISTINGS",
+//     payload: availableListings
+//   }
+// }
 
 export const fetchAvaliableListingsByCalendar = (date) => {
-  const availableListings = axios.post(`/reservationsbyCalendar`, date).then( (response) => {
+  const availableListings = axios.post(`/reservationCalendar`, date).then( (response) => {
     return response
   })
   return {
