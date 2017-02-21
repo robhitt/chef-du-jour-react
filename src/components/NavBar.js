@@ -22,18 +22,11 @@ renderExperience() {
         <ul className="nav navbar-nav">
           <li><Link to='/reservations'><span className="glyphicon glyphicon-cutlery"/>Reserve a Chef</Link></li>
           <li><Link to={`/user/create-dining-experience`}><span className="glyphicon glyphicon-sunglasses"/>Become a Chef</Link></li>
-          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><spann className="glyphicon glyphicon-sunglasses"/> Your Listings</Link></li>
-
-
+          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><span className="glyphicon glyphicon-sunglasses"/> Your Listings</Link></li>
         </ul>
+
         <ul className="nav navbar-nav navbar-right">
-
-
-
           <li><Link to={`/user/${this.props.user.id}`}><span className="glyphicon glyphicon-user"/> Hi {this.props.user.first_name}!</Link></li>
-
-
-
           <li><a href="" onClick={this.handleClick}><span className="glyphicon glyphicon-log-out"/> Logout</a></li>
         </ul>
       </div>

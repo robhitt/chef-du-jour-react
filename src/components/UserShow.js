@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { showUser, deleteUser } from '../actions/index'
+import { showUser, deleteUser, logoutUser } from '../actions/index'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'

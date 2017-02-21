@@ -32,8 +32,10 @@ import {Link} from 'react-router'
              <div className="card" key={my_dining_experience.id}>
                <div className="content">
                  <div className="header" key={my_dining_experience.id}>
-                   <h5>{ my_dining_experience.title }</h5>
-                   <div className="description">{my_dining_experience.description}</div></div>
+                   <h3>{ my_dining_experience.title }</h3>
+                   <div className="description">{my_dining_experience.description}</div>
+                 </div>
+                 <p></p>
                  <div>
                    <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default button-separator">Preview</button></Link>
                    <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default pull-right">Edit</button></Link></div>

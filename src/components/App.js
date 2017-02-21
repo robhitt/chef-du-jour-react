@@ -5,13 +5,15 @@ import NavBar from './NavBar'
 // import UserSignUp from './UserSignUp'
 
 class App extends Component {
+
+  componentDidMount() {
+  
+  }
+
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <NavBar/>
-                </div>
-
+                <div className="App-header"><NavBar/></div>
                 {this.props.children}
             </div>
         );

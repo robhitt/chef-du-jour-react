@@ -22,14 +22,14 @@ export const logoutUser = () => {
 export const createUser = (signUpParams) => {
     const user = axios.post('/signup', signUpParams).then((response) => {
         sessionStorage.setItem('jwt', response.data.jwt)
-        browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
+        browserHistory.push(`/user/${response.data.user.id}`)
         return response
     }) //.catch( (error) => error )
     return {type: 'CREATE_USER', payload: user}
 }
 
 export const showUser = ( userId ) => {
-axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const user = axios.get(`/users/${userId}`).then( (response) => {
     return response
   })
@@ -55,6 +55,7 @@ export const editUser = ( editParams ) => {
 export const deleteUser = ( userId ) => {
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const user = axios.delete(`/users/${userId}`).then( (response) => {
+    sessionStorage.clear()
     browserHistory.push('/signup')
     return response
   })
@@ -121,8 +122,27 @@ export const fetchMyDiningExperiences = (userId) => {
 }
 
 export const editDiningExperience = (diningExperienceId) => {
+  axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const currentDiningExperience = axios.get(`/dining_experiences/${diningExperienceId}`).then((response) => {
+    return response
+  })
   return {
-    type: "EDIT_MY_DINING_EXPERIENCE"
+    type: "EDIT_MY_DINING_EXPERIENCE",
+    payload: currentDiningExperience
+  }
+}
+
+export const updateDiningExperience = ( updateParams, userId ) => {
+
+  axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const diningExperience = axios.put(`/dining_experiences/${updateParams.id}`, updateParams).then( (response) => {
+    browserHistory.push(`/user/${userId}/my_dining_experiences`)
+    return response
+  })
+  console.log(diningExperience)
+  return {
+    type: "EDIT_MY_DINING_EXPERIENCES ",
+    payload: diningExperience
   }
 }
 

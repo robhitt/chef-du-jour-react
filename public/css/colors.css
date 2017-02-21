@@ -91,3 +91,33 @@
 .button-separator {
   margin-right: 2px;
 }
+
+#win-box-container {
+ display: none;
+ position: fixed;
+ height: 100vh;
+ width: 100vw;
+ z-index: 15;
+}
+
+#win-box {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ background-color: transparent;
+ height: 100vh;
+ width: 100vw;
+ /*z-index: 15;*/
+ /*z-index: 2;*/
+}
+
+#winner-gif {
+ min-width: 100%;
+ min-height: 100%;
+}
+
+.div-75-width {
+  margin-left: 10%;
+  width: 75%;
+}

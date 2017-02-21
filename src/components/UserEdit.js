@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { editUser } from '../actions/index'
-import { showUser } from '../actions/index'
+import { editUser, showUser } from '../actions/index'
 import { Link } from 'react-router'
 
 class UserEdit extends Component {
@@ -23,20 +22,19 @@ class UserEdit extends Component {
         instagram: '',
         personal_website: '',
       }
+
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleInputChange = this.handleInputChange.bind(this)
-      this.setDefaultInput = this.setDefaultInput.bind(this)
-
   }
 
   componentWillMount(props) {
     this.props.showUser(this.props.routeParams.id)
-    const curr_id = this.props.routeParams.id
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log(nextProps);
+
     const {
+      // pattern matching way of pushing nexstProps into each k,v pair
       users: {
         first_name,
         last_name,
@@ -53,8 +51,13 @@ class UserEdit extends Component {
       }
     } = nextProps;
 
+    // or explict way to set local state
+    // first_name: nextProps.users.first_name
+    // last_name: nextProps.users.last_name
+
+
     this.setState({
-      first_name,
+      first_name,  // same as - first_name: first_name
       last_name,
       phone_number,
       email,
@@ -69,19 +72,23 @@ class UserEdit extends Component {
     });
   }
 
-  setDefaultInput(key) {
-    return this.props.users ? this.props.users[key] : '';
-  }
-
   handleInputChange(event) {
     this.setState({
       [event.target.id]: event.target.value,
+
+      // above is same as
+      // if (event.target.id == first_name) {
+      //   first_name: event.target.value
+      // } else if (event.target.id == last_name) {
+      //   last_name: event.target.value
+      // }
     })
   }
 
   handleSubmit(event) {
       event.preventDefault()
 
+      // is there a way to pattern match this?
       const userEdit = {
           first_name: this.refs.first_name.value,
           last_name: this.refs.last_name.value,
@@ -102,13 +109,12 @@ class UserEdit extends Component {
   }
 
   render() {
+    
       return (
 
         <div className="container">
           <div>
             <h2>Edit your account</h2>
-
-
           </div>
 
           <form className="form-horizontal" onSubmit={this.handleSubmit} onChange={this.handleInputChange}>
@@ -122,7 +128,7 @@ class UserEdit extends Component {
             <div className="form-group">
               <label className="control-label col-sm-2" htmlFor="last_name">Last Name:</label>
               <div className="col-sm-10">
-                <input type="text" className="form-control" id="last_name" ref="last_name" value={this.state.last_name} onChange={this.handleInputChange} />
+                <input type="text" className="form-control" id="last_name" ref="last_name" value={this.state.last_name} />
               </div>
             </div>
 
