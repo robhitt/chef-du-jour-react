@@ -18,9 +18,7 @@ class DiningExperienceShow extends Component {
 
 
   render(){
-    // const foodImage = if (this.props.diningExperience) {
-    //    return <img src={this.props.diningExperience.signature_dishes[0].image_url} />
-    //  }
+    let foodImage = (this.props.diningExperience.signature_dishes) ? <img src={this.props.diningExperience.signature_dishes[0].image_url} /> : <div></div>
 
     if (this.props.diningExperience === []){
       return(
@@ -28,11 +26,12 @@ class DiningExperienceShow extends Component {
       )
 
     } else {
-
     return(
 
      <div>
-       {/* { foodImage } */}
+       <div className="div-image-width">
+         { foodImage }
+      </div>
 
        <h2>{this.props.diningExperience.title}</h2>
        <h4>Price:</h4>
