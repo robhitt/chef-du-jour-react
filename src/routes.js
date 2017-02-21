@@ -24,10 +24,9 @@ const requireLogin = (nextState, replace) => {
 export default (
   <Route path="/" component={ App }>
     <IndexRoute component ={ Home } />
-    <Route path="calendar" component={ Calendar } onEnter ={ requireLogin }/>
+    <Route path="reservations" component={ Calendar } onEnter ={ requireLogin }/>
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
-
     <Route path="reservation-finder" component={ ReservationFinder } />
     <Route path="user_edit" component={ UserEdit } onEnter ={ requireLogin} />
     <Route path="user">

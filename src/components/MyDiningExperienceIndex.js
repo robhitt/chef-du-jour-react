@@ -17,30 +17,31 @@ import {Link} from 'react-router'
 
     const myDiningExperiences= this.props.myDiningExperiences
     return(
-         <div className="ui grid">
-           <div className="well text-center center">
-             <div className = "column">
+         <div className="container">
+           <div className="row panel panel-default">
+             <div>
                <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
              </div>
-             <div className="column">
+             <div>
                <div className="btn btn-default">
                  <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
                </div>
              </div>
            </div>
-           <div className="ui cards well">
-         {myDiningExperiences.map((my_dining_experience) => {
-           return(
-             <div className="card" key={my_dining_experience.id}>
-               <div className="content">
-                 <div className="header" key={my_dining_experience.id}>
-                   <h3>{ my_dining_experience.title }</h3>
-                   <div className="description">{my_dining_experience.description}</div>
-                 </div>
-                 <p></p>
-                 <div>
-                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default button-separator">Preview</button></Link>
-                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default pull-right">Edit</button></Link></div>
+
+           <div className="row">
+             {myDiningExperiences.map((my_dining_experience) => {
+               return(
+                 <div className="col-sm-6 col-md-4" key={my_dining_experience.id}>
+                   <div className="thumbnail">
+                     <img src="http://i63.tinypic.com/1z68sbk.jpg" alt="tiny chef"/>
+                     <div className="caption" key={my_dining_experience.id}>
+                       <h5>{ my_dining_experience.title }</h5>
+                       <div className="description">{my_dining_experience.description}</div></div>
+                     <div>
+                       <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-info button-separator">Preview</button></Link>
+                       <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-primary pull-right">Edit</button></Link></div>
+
                </div>
              </div>)}
          )} </div>

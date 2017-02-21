@@ -25,8 +25,8 @@ class Calendar extends Component {
         this.props.fetchAvaliableListingsByCalendar(date)
      }
 
-handleClick(event){
-  let date = {date: event.format("ddd, D MMM YYYY")}
+handleDate(event){
+    let date = {date: event.target.value}
   this.props.fetchAvaliableListingsByCalendar(date)
 }
 
@@ -39,11 +39,17 @@ shouldComponentUpdate(nextProps, nextState) {
         return (
             <div className= "container">
               <div className="row text-center">
-                <InfiniteCalendar width={360} height={265} selectedDate={this.today} minDate={this.today} maxDate={this.maxDate} keyboardSupport={true} min={this.min} max={this.maxDate} onSelect={this.handleClick.bind(this)} rowHeight={52}/>
-                <div>
-                  <Reservation />
-                </div>
+                {/* <InfiniteCalendar width={360} height={265} selectedDate={this.today} minDate={this.today} maxDate={this.maxDate} keyboardSupport={true} min={this.min} max={this.maxDate} onSelect={this.handleClick.bind(this)} rowHeight={52}/>
+                */}
+                <form>
+                  <input  type="date" onInput={this.handleDate.bind(this)}/>
+                  <div>
+                    <span className="inline">  Price: 0 <input  type="range" defaultValue="50"/> </span>
+                  </div>
+                  <input  type="length"/>
+                </form>
               </div>
+              <Reservation />
             </div>
           )
     }
