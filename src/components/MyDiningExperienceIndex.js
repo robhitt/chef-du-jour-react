@@ -17,11 +17,18 @@ import {Link} from 'react-router'
 
     const myDiningExperiences= this.props.myDiningExperiences
     return(
-     <div>
-       <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
-       <div className="well well-sm">
-         <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences </div>
-       <div className="ui cards">
+         <div className="ui grid">
+           <div className="well text-center center">
+             <div className = "column">
+               <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
+             </div>
+             <div className="column">
+               <div className="btn btn-default">
+                 <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
+               </div>
+             </div>
+           </div>
+           <div className="ui cards well">
          {myDiningExperiences.map((my_dining_experience) => {
            return(
              <div className="card" key={my_dining_experience.id}>
@@ -30,8 +37,8 @@ import {Link} from 'react-router'
                    <h5>{ my_dining_experience.title }</h5>
                    <div className="description">{my_dining_experience.description}</div></div>
                  <div>
-                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Preview</button></Link>
-                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default">Edit</button></Link></div>
+                   <Link to={`/dining_experiences/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default button-separator">Preview</button></Link>
+                   <Link to={`/manage/${my_dining_experience.id}`}><button type="button" className="ui bottom attached btn btn-default pull-right">Edit</button></Link></div>
                </div>
              </div>)}
          )} </div>

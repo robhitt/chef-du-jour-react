@@ -35,12 +35,3 @@ export default (props) => {
     }
   }
 
-
-  // Show all experiences
-  //   All experiences must have a reserve button
-  // OnClick connect experience to user, post request to API in the reservation action (index.js)
-  // reservation.user = reservation (controller on the rails side)
-  // RAILS: look into config file in routes
-  // RAILS: look into serializer
-
-  // TBD Show all available experiences

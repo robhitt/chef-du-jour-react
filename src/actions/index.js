@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {browserHistory} from 'react-router'
+import { browserHistory } from 'react-router'
 
 axios.defaults.baseURL = 'http://localhost:8080/api/v1'
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
@@ -9,7 +9,7 @@ export const loginUser = (loginParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
-    })
+    }).catch( (error) => error )
     return {type: 'LOGIN_USER', payload: user}
 }
 
@@ -24,7 +24,7 @@ export const createUser = (signUpParams) => {
         sessionStorage.setItem('jwt', response.data.jwt)
         browserHistory.push(`/user/${response.data.user.id}`) // THIS IS A REDIRECT IN REACT
         return response
-    }) //.catch( (error) => error )
+    }).catch( (error) => error )
     return {type: 'CREATE_USER', payload: user}
 }
 
@@ -40,11 +40,10 @@ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') /
 }
 
 export const editUser = ( editParams ) => {
- // axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
+
+ axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt') // do we need this here since it's in line 5?
  const user = axios.put(`/users/${editParams.id}`, editParams).then( (response) => {
-
-    browserHistory.push(`/user/${response.data.id}`) // THIS IS A REDIRECT IN REACT
-
+    browserHistory.push(`/user/${response.data.id}`)
     return response
   })
   return {
@@ -53,9 +52,22 @@ export const editUser = ( editParams ) => {
   }
 }
 
+export const deleteUser = ( userId ) => {
+axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const user = axios.delete(`/users/${userId}`).then( (response) => {
+    browserHistory.push('/signup')
+    return response
+  })
+  return {
+    type: 'DELETED_USER',
+    payload: user
+  }
+}
+
 export const createDiningExperience = (diningExperienceParams) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const diningExperience = axios.post(`/dining_experiences`, diningExperienceParams).then((response)=>{
+    browserHistory.push(`/user/${response.data.user.id}/my_dining_experiences`)
     return response
   })
   return{
@@ -63,6 +75,7 @@ export const createDiningExperience = (diningExperienceParams) => {
     payload: diningExperience
   }
 }
+
 
 export const fetchAvaliableListings = (searchParams) => {
   const availableListings = axios.get(`/reservations`,{params: searchParams}).then( (response) => {
