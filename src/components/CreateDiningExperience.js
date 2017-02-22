@@ -25,7 +25,7 @@ handleSubmit(event){
   render(){
     return(
       <div className="container">
-        <h2> Create a Dining Experience </h2>
+        <h2 className="text-center"> Create a Dining Experience </h2>
         <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
 
         <div className="form-group">

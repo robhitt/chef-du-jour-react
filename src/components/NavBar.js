@@ -21,8 +21,9 @@ renderExperience() {
       <div>
         <ul className="nav navbar-nav">
           <li><Link to='/reservation-finder'><span className="glyphicon glyphicon-cutlery"/>Reserve a Chef</Link></li>
+          <li><Link to={`/my_reservations`}><span className="glyphicon glyphicon-tag"/>Your Reservations</Link></li>
           <li><Link to={`/user/create-dining-experience`}><span className="glyphicon glyphicon-sunglasses"/>Become a Chef</Link></li>
-          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><span className="glyphicon glyphicon-sunglasses"/> Your Listings</Link></li>
+          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><span className="glyphicon glyphicon-list"/> Chef Listings</Link></li>
         </ul>
 
         <ul className="nav navbar-nav navbar-right">

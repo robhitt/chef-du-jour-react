@@ -122,6 +122,17 @@ export const fetchMyDiningExperiences = (userId) => {
   }
 }
 
+export const fetchMyReservations = () => {
+  axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
+  const myReservations = axios.get(`/my_reservations`).then((response) => {
+    return response
+  })
+  return {
+    type: "FETCH_MY_RESERVATIONS",
+    payload: myReservations
+  }
+}
+
 export const editDiningExperience = (diningExperienceId) => {
   axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
   const currentDiningExperience = axios.get(`/dining_experiences/${diningExperienceId}`).then((response) => {

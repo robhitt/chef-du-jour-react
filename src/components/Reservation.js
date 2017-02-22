@@ -7,7 +7,7 @@ export default (props) => {
       const availableListings = props.reservations
       return(
         <div>
-          <h2> Reserve a Chef </h2>
+          <h2 className="text-center"> Reserve a Chef </h2>
           <div className="row">
             { availableListings.map((dining_experience, i) => {
               //if (dining_experience.status === 'available') {
@@ -34,4 +34,3 @@ export default (props) => {
       return <div>loading...</div>
     }
   }
-
