@@ -39,8 +39,12 @@ class ReservationFinder extends Component {
 
     render() {
         return (
+          <div className="reservation-photo">
+            <div>.</div>
+            <div className="horizontal-helper">
+              <div className="centered-main">
+              <h2> Choose a chef by available date by clicking the form below</h2>
 
-            <div>
               <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
               <div className="form-group">
                 <div className="col-sm-10">
@@ -56,6 +60,8 @@ class ReservationFinder extends Component {
 
               <Reservation reservations={this.props.reservations} handleClick={this.handleClick.bind(this)}/>
             </div>
+          </div>
+        </div>
         );
     }
 }

@@ -22,6 +22,13 @@ class UserSignIn extends Component {
 
     render() {
         return (
+          
+          <div className="signin-photo">
+            <div>.</div>
+            <div className="horizontal-helper">
+              <div className="centered-main">
+
+
             <div className="container">
               <div>
                 <h2>Sign Into Chef Du Jour</h2>
@@ -51,7 +58,8 @@ class UserSignIn extends Component {
 
 
               </form>
-            </div>
+            </div></div></div>
+          </div>
         )
     }
 }
