@@ -32,6 +32,14 @@
   height: 1080px;
 }
 
+.my-dining-experience-photo {
+  margin-top: 0;
+  background-image: url("http://bit.ly/2lqEruv");
+  background-size: cover;
+  background-position: center;
+  height: 1080px;
+}
+
 .navbar-default {
   background-color: #30c4c9;
   border-color: #30c4c9;
@@ -223,3 +231,6 @@
   background-color: #30c4c9;
 }
 
+.lower-margin {
+  margin-bottom: 5px;
+}
