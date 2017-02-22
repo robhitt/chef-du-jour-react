@@ -13,10 +13,12 @@ class ReservationShow extends Component {
     }
 
     render() {
-      if (this.props.myReservations){
+      
+      if (this.props.myReservations.length > 0 ){
         return (
 
             <div>{this.props.myReservations.map( (reservation, i)=> {
+
               return (
                 <div key={i}>
                   <li> {reservation.status}: {reservation.dining_experience.title} </li>
