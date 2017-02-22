@@ -16,16 +16,24 @@ class ReservationShow extends Component {
       if (this.props.myReservations.length > 0 ){
         return (
 
-            <div>{this.props.myReservations.map( (reservation, i)=> {
+            <div className="container">{this.props.myReservations.map( (reservation, i)=> {
 
               return (
-                <div key={i}>
-                  <li> {reservation.dining_experience.title} </li>
-                  <li> {reservation.dining_experience.length} </li>
-                  <li> {reservation.dining_experience.price} </li>
-                  <li> {reservation.dining_experience.description} </li>
-
+                <div className="panel panel-default" key={i}>
+                  <div className="panel-heading">
+                    <h3 className="panel-title">{reservation.dining_experience.title}</h3>
+                  </div>
+                  <div className="panel-body">
+                    <ul>
+                      <li> Date: {new Date(reservation.date).toString().slice(0,10)} </li>
+                        <li> Duration: {reservation.dining_experience.length} </li>
+                      <li> Price: ${reservation.dining_experience.price} </li>
+                      <li> Description: {reservation.dining_experience.description} </li>
+                    </ul>
+                    </div>
                 </div>
+
+
               )
             })}</div>
 
@@ -45,7 +53,7 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-  return {myReservations: state.reservations}
+  return {myReservations: state.myReservations}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReservationShow)

@@ -2,8 +2,6 @@ export default function reservationsReducer(state=[], action){
   switch(action.type) {
     case "CREATE_RESERVATION":
       return action.payload.data
-    case "FETCH_MY_RESERVATIONS":
-        return action.payload.data
     case "EDIT_RESERVATION":
       return action.payload.data
     case "REQUEST_RESERVATION":
