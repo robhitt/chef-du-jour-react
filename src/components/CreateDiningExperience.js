@@ -24,47 +24,59 @@ handleSubmit(event){
 
   render(){
     return(
-      <div className="container">
-        <h2> Create a Dining Experience </h2>
-        <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
 
-        <div className="form-group">
-          <label className="control-label col-sm-2" htmlFor="title">Title:</label>
-          <div className="col-sm-10">
-            <textarea className="form-control" ref="title" placeholder="Enter a Creative Title" />
+      <div className="create-user-photo">
+        <div>.</div>
+        <div className="horizontal-helper">
+          <div className="centered-main">
+
+
+              <h2> Create a Dining Experience </h2>
+              <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
+
+              <div className="form-group">
+                <label className="control-label col-sm-2" htmlFor="title">Title:</label>
+                <div className="col-sm-10">
+                  <textarea className="form-control" ref="title" placeholder="Enter a Creative Title" />
+                </div>
+              </div>
+
+
+                <div className="form-group">
+                  <label className="control-label col-sm-2" htmlFor="description">Description:</label>
+                  <div className="col-sm-10">
+                    <textarea className="form-control" ref="description" placeholder="This is a wonderful dining experience." />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label className="control-label col-sm-2" htmlFor="price">Price:</label>
+                  <div className="col-sm-10">
+                    <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div className="input-group-addon">$</div>
+                    <input type="number" min="1" max="500" placeholder="Total Price of Experience" className="form-control" ref="price"/>
+                  </div>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label className="control-label col-sm-2" htmlFor="length">Length:</label>
+                  <div className="col-sm-10">
+                    <input className="form-control" ref="length" placeholder="Enter Number Hours of this Dining Experience"/>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <div className="control-label col-sm-2"></div>
+                  <div className="col-sm-10">
+                    <button className="btn btn-success btn-lg btn-block button-color-scheme" type="submit">Submit</button>
+                  </div>
+                  </div>
+
+              </form>
+
           </div>
         </div>
-
-
-          <div className="form-group">
-            <label className="control-label col-sm-2" htmlFor="description">Description:</label>
-            <div className="col-sm-10">
-              <textarea className="form-control" ref="description" placeholder="This is a wonderful dining experience." />
-            </div>
-          </div>
-
-          <div className="form-group">
-            <label className="control-label col-sm-2" htmlFor="price">Price:</label>
-            <div className="col-sm-10">
-              <input type="number" min="1" max="500" className="form-control" ref="price"/>
-            </div>
-          </div>
-
-          <div className="form-group">
-            <label className="control-label col-sm-2" htmlFor="length">Length:</label>
-            <div className="col-sm-10">
-              <input className="form-control" ref="length"/>
-            </div>
-          </div>
-
-          <div className="form-group">
-            <div className="control-label col-sm-2"></div>
-            <div className="col-sm-10">
-              <button className="btn btn-success btn-lg btn-block" type="submit">Submit</button>
-            </div>
-            </div>
-
-        </form>
       </div>
     )
   }

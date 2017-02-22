@@ -22,7 +22,7 @@ class UserSignIn extends Component {
 
     render() {
         return (
-          
+
           <div className="signin-photo">
             <div>.</div>
             <div className="horizontal-helper">
@@ -52,7 +52,7 @@ class UserSignIn extends Component {
                 <div className="form-group">
                   <div className="control-label col-sm-2"></div>
                   <div className="col-sm-10">
-                    <button className="btn btn-info btn-lg btn-block" type="submit">Submit</button>
+                    <button className="btn btn-primary btn-lg button-color-scheme" type="submit">Submit</button>
                   </div>
                 </div>
 

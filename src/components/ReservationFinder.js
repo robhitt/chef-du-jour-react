@@ -45,17 +45,20 @@ class ReservationFinder extends Component {
               <div className="centered-main">
               <h2> Choose a chef by available date by clicking the form below</h2>
 
-              <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
-              <div className="form-group">
-                <div className="col-sm-10">
-                  <input type="date" className="form-control" ref="date"/>
+
+
+              <form className="form-horizontal" onInput={this.handleSubmit.bind(this)}>
+                <div className="form-group">
+                  <div className="col-sm-10">
+                    <input type="date" className="form-control" ref="date" onInput={this.handleSubmit.bind(this)}/>
+                  </div>
+
                 </div>
-              </div>
-              <div className="form-group">
-                <div className="control-label col-sm-2">
-                  <button className="btn btn-info btn-lg btn-block" type="submit">Search</button>
-                </div>
-              </div>
+                {/* <div className="form-group">
+                  <div className="control-label col-sm-2">
+                    <button className="btn btn-info btn-lg btn-block" type="submit">Search</button>
+                  </div>
+                </div> */}
               </form>
 
               <Reservation reservations={this.props.reservations} handleClick={this.handleClick.bind(this)}/>
