@@ -109,106 +109,113 @@ class UserEdit extends Component {
   }
 
   render() {
-    
+
       return (
+            <div className="reservation-photo">
+              <div>.</div>
+              <div className="horizontal-helper">
+                <div className="centered-main">
+                  <h2 className="text-center">Welcome back {this.props.users.first_name}!</h2>
+                    <div className="container">
+                      <div>
+                        <h2>Edit your account</h2>
+                      </div>
 
-        <div className="container">
-          <div>
-            <h2>Edit your account</h2>
-          </div>
+                      <form className="form-horizontal" onSubmit={this.handleSubmit} onChange={this.handleInputChange}>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
+                          <div className="col-sm-10">
+                            <input type="text" className="form-control" id="first_name" ref="first_name" value={this.state.first_name} />
+                          </div>
+                        </div>
 
-          <form className="form-horizontal" onSubmit={this.handleSubmit} onChange={this.handleInputChange}>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="first_name">First Name:</label>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" id="first_name" ref="first_name" value={this.state.first_name} />
-              </div>
-            </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="last_name">Last Name:</label>
+                          <div className="col-sm-10">
+                            <input type="text" className="form-control" id="last_name" ref="last_name" value={this.state.last_name} />
+                          </div>
+                        </div>
 
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="last_name">Last Name:</label>
-              <div className="col-sm-10">
-                <input type="text" className="form-control" id="last_name" ref="last_name" value={this.state.last_name} />
-              </div>
-            </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="phone_number">Phone Number:</label>
+                          <div className="col-sm-10">
+                            <input className="form-control" id="phone_number" ref="phone_number" value={this.state.phone_number} />
+                          </div>
+                        </div>
 
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="phone_number">Phone Number:</label>
-              <div className="col-sm-10">
-                <input className="form-control" id="phone_number" ref="phone_number" value={this.state.phone_number} />
-              </div>
-            </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="email">Email:</label>
+                          <div className="col-sm-10">
+                            <input className="form-control" id="email" ref="email" value={this.state.email}  />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="street1">Address Line 1:</label>
+                          <div className="col-sm-10">
+                            <input className="form-control" id="street1" ref="street1" value={this.state.street1} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="street2">Address Line 2:</label>
+                          <div className="col-sm-10">
+                            <input className="form-control" id="street2" ref="street2" value={this.state.street2} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="city">City:</label>
+                          <div className="col-sm-10">
+                            <input className="form-control" id="city" ref="city" value={this.state.city} />
 
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="email">Email:</label>
-              <div className="col-sm-10">
-                <input className="form-control" id="email" ref="email" value={this.state.email}  />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="street1">Address Line 1:</label>
-              <div className="col-sm-10">
-                <input className="form-control" id="street1" ref="street1" value={this.state.street1} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="street2">Address Line 2:</label>
-              <div className="col-sm-10">
-                <input className="form-control" id="street2" ref="street2" value={this.state.street2} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="city">City:</label>
-              <div className="col-sm-10">
-                <input className="form-control" id="city" ref="city" value={this.state.city} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="state">State:</label>
+                          <div className="col-sm-10">
 
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="state">State:</label>
-              <div className="col-sm-10">
+                            <input className="form-control" id="state" ref="state" value={this.state.state} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="zipcode">Zip Code:</label>
+                          <div className="col-sm-10">
 
-                <input className="form-control" id="state" ref="state" value={this.state.state} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="zipcode">Zip Code:</label>
-              <div className="col-sm-10">
+                            <input className="form-control" id="zipcode" ref="zipcode" value={this.state.zipcode} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="chef_biography">Short Bio:</label>
+                          <div className="col-sm-10">
 
-                <input className="form-control" id="zipcode" ref="zipcode" value={this.state.zipcode} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="chef_biography">Short Bio:</label>
-              <div className="col-sm-10">
+                            <textarea className="form-control" id="chef_biography" ref="chef_biography" value={this.state.chef_biography} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="instagram">Instagram:</label>
+                          <div className="col-sm-10">
 
-                <textarea className="form-control" id="chef_biography" ref="chef_biography" value={this.state.chef_biography} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="instagram">Instagram:</label>
-              <div className="col-sm-10">
+                            <input className="form-control" id="instagram" ref="instagram" value={this.state.instagram} />
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="control-label col-sm-2" htmlFor="personal_website">Website:</label>
+                          <div className="col-sm-10">
 
-                <input className="form-control" id="instagram" ref="instagram" value={this.state.instagram} />
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="control-label col-sm-2" htmlFor="personal_website">Website:</label>
-              <div className="col-sm-10">
+                            <input className="form-control" id="personal_website" ref="personal_website" value={this.state.personal_website} />
+                          </div>
+                        </div>
 
-                <input className="form-control" id="personal_website" ref="personal_website" value={this.state.personal_website} />
-              </div>
-            </div>
+                        <div className="form-group">
+                          <div className="control-label col-sm-2"></div>
+                          <div className="col-sm-10">
+                            <button className="btn button-color-scheme btn-lg" type="submit">Update</button>
+                          </div>
+                        </div>
 
-            <div className="form-group">
-              <div className="control-label col-sm-2"></div>
-              <div className="col-sm-10">
-                <button className="btn btn-info btn-lg btn-block" type="submit">Update</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-
-          </form>
-        </div>
       )
   }
 }
