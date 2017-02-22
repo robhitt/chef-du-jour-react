@@ -57,13 +57,13 @@ class UserSignUp extends Component {
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="phone_number">Phone Number:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="phone_number" placeholder="Enter Phone Number" />
+                    <input type="tel" className="form-control" ref="phone_number" placeholder="Enter Phone Number" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="email">Email:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="email" placeholder="Enter Email" />
+                    <input className="form-control" type="email" ref="email" placeholder="Enter Email" />
                   </div>
                 </div>
                 <div className="form-group">
@@ -106,18 +106,24 @@ class UserSignUp extends Component {
                     <input className="form-control" ref="chef_biography" placeholder="Tell us about your cheffing experience!" />
                   </div>
                 </div>
+
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="instagram">Instagram:</label>
                   <div className="col-sm-10">
-
-                    <input className="form-control" ref="instagram" placeholder="@TheAwesomeChef" />
+                    <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div className="input-group-addon">@</div>
+                        <input className="form-control" ref="instagram" placeholder="instagram" />
+                    </div>
                   </div>
                 </div>
+
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="personal_website">Website:</label>
                   <div className="col-sm-10">
-
-                    <input className="form-control" ref="personal_website" placeholder="www.awesomechef.com" />
+                    <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <div className="input-group-addon">http://</div>
+                      <input className="form-control" ref="personal_website" placeholder="www.awesomechef.com" />
+                    </div>
                   </div>
                 </div>
                 <div className="form-group">
