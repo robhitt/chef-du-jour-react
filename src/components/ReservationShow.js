@@ -30,11 +30,11 @@ class ReservationShow extends Component {
                   <div className="panel-body">
                     <ul>
                       <li> Date: {new Date(reservation.date).toString().slice(0,10)} </li>
-                        <li> Duration: {reservation.dining_experience.length} </li>
+                      <li> Duration: {reservation.dining_experience.length} </li>
                       <li> Price: ${reservation.dining_experience.price} </li>
                       <li> Description: {reservation.dining_experience.description} </li>
                     </ul>
-                    </div>
+                  </div>
                 </div>
 
 
