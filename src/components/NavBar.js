@@ -21,8 +21,9 @@ renderExperience() {
       <div>
         <ul className="nav navbar-nav">
           <li><Link to='/reservation-finder'><span className="glyphicon glyphicon-cutlery"/>Reserve a Chef</Link></li>
+          <li><Link to={`/my_reservations`}><span className="glyphicon glyphicon-tag"/>Your Reservations</Link></li>
           <li><Link to={`/user/create-dining-experience`}><span className="glyphicon glyphicon-sunglasses"/>Become a Chef</Link></li>
-          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><span className="glyphicon glyphicon-sunglasses"/> Your Listings</Link></li>
+          <li><Link to={`/user/${this.props.user.id}/my_dining_experiences`}><span className="glyphicon glyphicon-list"/> Chef Listings</Link></li>
         </ul>
 
         <ul className="nav navbar-nav navbar-right">
@@ -46,18 +47,11 @@ renderExperience() {
   render(){
     return(
       <nav className="navbar navbar-default">
-      <div className="container-fluid">
+        <div className="container-fluid">
           <div className="nav navbar-nav">
-            {/* <Link to='/'><img src={"%PUBLIC_URL%/images/nav-logo-white.png"} alt="Chef Du Logo"/></Link> */}
-            <Link to='/'><img src={'http://i63.tinypic.com/2hoycmq.png'} alt="Chef Du Jour Logo" /></Link>
-            {/* http://i64.tinypic.com/30s9fsg.png */}
+            <Link to='/'><img src={'http://i63.tinypic.com/2hoycmq.png'} alt="Chef Du Jour Logo" className="vertical-helper" /></Link>
           </div>
-
-
-
-            {this.renderExperience()}
-
-
+              {this.renderExperience()}
         </div>
       </nav>
     )
