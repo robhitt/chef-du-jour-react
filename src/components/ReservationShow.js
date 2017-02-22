@@ -15,10 +15,14 @@ class ReservationShow extends Component {
     render() {
       if (this.props.myReservations.length > 0 ){
         return (
-
+          <div className="my-dining-experience-photo">
+            <div>.</div>
+            <div className="horizontal-helper">
+              <div className="centered-main">
             <div className="container">{this.props.myReservations.map( (reservation, i)=> {
 
               return (
+
                 <div className="panel panel-default" key={i}>
                   <div className="panel-heading">
                     <h3 className="panel-title">{reservation.dining_experience.title}</h3>
@@ -34,13 +38,21 @@ class ReservationShow extends Component {
                 </div>
 
 
+
               )
-            })}</div>
+            })}</div></div></div></div>
 
         )
       } else {
         return (
-          <div> No Current Reservations </div>
+          <div className="create-user-photo">
+            <div>.</div>
+            <div className="horizontal-helper">
+              <div className="centered-main">
+                <div> No Current Reservations </div>
+              </div>
+            </div>
+          </div>
         )
       }
 

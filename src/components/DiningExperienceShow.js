@@ -75,6 +75,10 @@ class DiningExperienceShow extends Component {
 
 
 
+       <div className="reservation-photo">
+         <div>.</div>
+         <div className="horizontal-helper">
+           <div className="centered-main">
        <div>
          <h2>{this.props.diningExperience.title}</h2>
          <h4>Price:</h4>
@@ -85,7 +89,8 @@ class DiningExperienceShow extends Component {
          <p>{this.props.diningExperience.description}</p>
          { foodImage }
        </div>
-     </div>
+     </div></div></div></div>
+
    )}
  }
  }
