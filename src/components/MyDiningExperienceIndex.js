@@ -14,20 +14,25 @@ import {Link} from 'react-router'
     }
 
   render(){
-
+    // my-dining-experience-photo
     const myDiningExperiences= this.props.myDiningExperiences
     return(
-         <div className="container">
-           <div className="row panel panel-default">
-             <div>
+      <div className="create-user-photo">
+        <div>.</div>
+        <div className="horizontal-helper">
+          <div className="centered-main">
+           <div className="row">
+             <span className="border-space">
                <Link to='/user/create-dining-experience' className="btn btn-default"><span className="glyphicon glyphicon-cutlery"/> Create a Dining Experience</Link>
-             </div>
-             <div>
+             </span>
+             <span className="border-space">
                <div className="btn btn-default">
                  <span className="badge">{myDiningExperiences.length}</span> Bookable Dining Experiences
                </div>
-             </div>
+             </span>
            </div>
+
+           <div className="row lower-margin"></div>
 
            <div className="row">
              {myDiningExperiences.map((my_dining_experience) => {
@@ -46,6 +51,8 @@ import {Link} from 'react-router'
              </div>)}
          )} </div>
      </div>
+   </div>
+ </div>
        )
              }
            }

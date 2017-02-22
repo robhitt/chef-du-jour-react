@@ -71,11 +71,17 @@ class ManageMyDiningExperience extends Component {
 
     render() {
         return (
+
+          <div className="create-user-photo">
+            <div>.</div>
+            <div className="horizontal-helper">
+              <div className="centered-main">
+
             <div className="containter div-75-width">
 
-              <div className="jumbotron">
+
                  <h2>Hello Chef {this.state.user.last_name}. You can edit your dining experience below.</h2>
-              </div>
+              
 
               <form className="form-horizontal" onSubmit={this.handleSubmit} onChange={this.handleInputChange}>
                 <div className="form-group">
@@ -117,6 +123,7 @@ class ManageMyDiningExperience extends Component {
                 </div>
 
               </form>
+              </div></div></div>
 
 
             </div>
