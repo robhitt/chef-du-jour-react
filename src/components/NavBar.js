@@ -46,18 +46,11 @@ renderExperience() {
   render(){
     return(
       <nav className="navbar navbar-default">
-      <div className="container-fluid">
+        <div className="container-fluid">
           <div className="nav navbar-nav">
-            {/* <Link to='/'><img src={"%PUBLIC_URL%/images/nav-logo-white.png"} alt="Chef Du Logo"/></Link> */}
-            <Link to='/'><img src={'http://i63.tinypic.com/2hoycmq.png'} alt="Chef Du Jour Logo" /></Link>
-            {/* http://i64.tinypic.com/30s9fsg.png */}
+            <Link to='/'><img src={'http://i63.tinypic.com/2hoycmq.png'} alt="Chef Du Jour Logo" className="vertical-helper" /></Link>
           </div>
-
-
-
-            {this.renderExperience()}
-
-
+              {this.renderExperience()}
         </div>
       </nav>
     )
