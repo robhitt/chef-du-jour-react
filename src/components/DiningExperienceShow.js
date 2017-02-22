@@ -18,7 +18,7 @@ class DiningExperienceShow extends Component {
 
 
   render(){
-    let foodImage = (this.props.diningExperience.signature_dishes) ? <img className="img div-image-width" src={this.props.diningExperience.signature_dishes[0].image_url} /> : <div></div>
+    let foodImage = (this.props.diningExperience.signature_dishes) ? <img className="div-image-width" src={this.props.diningExperience.signature_dishes[0].image_url} /> : <div></div>
 
     if (this.props.diningExperience === []){
       return(
@@ -67,29 +67,39 @@ class DiningExperienceShow extends Component {
          </a>
        </div> */}
 
-
-
-
-
-
-
-
-
        <div className="reservation-photo">
          <div>.</div>
          <div className="horizontal-helper">
            <div className="centered-main">
-       <div>
-         <h2>{this.props.diningExperience.title}</h2>
-         <h4>Price:</h4>
-         <p>{this.props.diningExperience.price}</p>
-         <h4>Length: </h4>
-         <p>{this.props.diningExperience.length} hours</p>
-         <h4>Description: </h4>
-         <p>{this.props.diningExperience.description}</p>
-         { foodImage }
-       </div>
-     </div></div></div></div>
+             <div>
+
+               <h2>{this.props.diningExperience.title}</h2>
+
+               <div className="list-group">
+
+               <div className="row">
+                 <div className="col-sm-2 list-group-item panel-no-border"><strong>Price:</strong></div>
+                 <div className="col-sm-10 list-group-item panel-no-border">${this.props.diningExperience.price}</div>
+                </div>
+
+                <div className="row">
+                  <div className="col-sm-2 list-group-item panel-no-border"><strong>Length</strong></div>
+                  <div className="col-sm-10 list-group-item panel-no-border">{this.props.diningExperience.length}</div>
+                </div>
+
+                <div className="row">
+                  <div className="col-sm-2 list-group-item panel-no-border"><strong>Description:</strong></div>
+                  <div className="col-sm-10 list-group-item panel-no-border">{this.props.diningExperience.description}</div>
+                </div>
+
+                  <p className="list-group-item panel-no-border">{ foodImage }</p>
+               </div>
+             </div>
+           </div>
+         </div>
+
+     </div>
+     </div>
 
    )}
  }
