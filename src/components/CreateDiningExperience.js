@@ -25,23 +25,10 @@ handleSubmit(event){
   render(){
     return(
 
-      <div className="container">
-        <h2 className="text-center"> Create a Dining Experience </h2>
-        <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
-
-        <div className="form-group">
-          <label className="control-label col-sm-2" htmlFor="title">Title:</label>
-          <div className="col-sm-10">
-            <textarea className="form-control" ref="title" placeholder="Enter a Creative Title" />
-          </div>
-        </div>
-
-
       <div className="create-user-photo">
         <div>.</div>
         <div className="horizontal-helper">
           <div className="centered-main">
-
 
               <h2> Create a Dining Experience </h2>
               <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
@@ -90,6 +77,7 @@ handleSubmit(event){
           </div>
         </div>
       </div>
+
     )
   }
 }
