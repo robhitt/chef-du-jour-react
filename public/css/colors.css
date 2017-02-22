@@ -234,3 +234,7 @@
 .lower-margin {
   margin-bottom: 5px;
 }
+
+.panel-no-border{
+  border: 0;
+}

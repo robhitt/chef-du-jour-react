@@ -28,114 +28,114 @@ class UserShow extends Component {
       <div className="reservation-photo">
         <div>.</div>
         <div className="horizontal-helper">
-              <div className="centered-main">
+          <div className="centered-main">
             <h2>Welcome back {this.props.users.first_name}!</h2>
-            <div className="container-fluid">
+            <div className="container-fluid list-group">
 
               <div className="row">
-                <div className="col-sm-2">
-                  First Name:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>First Name:</strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.first_name}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Last Name:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Last Name: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.last_name}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Phone Number:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Phone #: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.phone_number}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Email:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Email: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.email}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Street 1:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Street 1: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.street1}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Street 2:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Street 2: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.street2}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  City:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>City: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.city}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  State:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>State: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.state}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Zip Code:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>Zip Code: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.zipcode}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Bio:
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong>  Bio:</strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   {this.props.users.chef_biography}
                 </div>
               </div>
 
               <div className="row">
-                <div className="col-sm-2">
-                  Instagram:
-                </div>
-                <div className="col-sm-10">
-                  {this.props.users.instagram}
-                </div>
+                <div className="col-sm-2 list-group-item panel-no-border">
+                  <strong> Instagram: </strong>
               </div>
+              <div className="col-sm-10 list-group-item panel-no-border">
+                {this.props.users.instagram}
+              </div>
+            </div>
 
-              <div className="row">
-                <div className="col-sm-2">
-                  Website:
+            <div className="row">
+              <div className="col-sm-2 list-group-item panel-no-border">
+                <strong> Website: </strong>
                 </div>
-                <div className="col-sm-10">
+                <div className="col-sm-10 list-group-item panel-no-border">
                   <a href={personal_url}>{this.props.users.personal_website}</a>
                 </div>
               </div>
