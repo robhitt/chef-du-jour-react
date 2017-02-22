@@ -5,6 +5,7 @@ import UserSignUp from './components/UserSignUp'
 import UserSignIn from './components/UserSignIn'
 import UserShow from './components/UserShow'
 import ReservationFinder from './components/ReservationFinder'
+import ReservationShow from './components/ReservationShow'
 import CreateDiningExperience from "./components/CreateDiningExperience"
 import DiningExperienceShow from "./components/DiningExperienceShow"
 import MyDiningExperiences from "./components/MyDiningExperienceIndex"
@@ -26,6 +27,7 @@ export default (
     <Route path="signup" component={ UserSignUp } />
     <Route path="signin" component={ UserSignIn } />
     <Route path="reservation-finder" component={ ReservationFinder } onEnter ={ requireLogin } />
+    <Route path="my_reservations" component={ ReservationShow } onEnter ={ requireLogin } />
     <Route path="user_edit" component={ UserEdit } onEnter ={ requireLogin} />
     <Route path="user">
       <Route path="create-dining-experience" component={CreateDiningExperience} onEnter ={ requireLogin } />
