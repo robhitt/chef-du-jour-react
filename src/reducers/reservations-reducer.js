@@ -8,8 +8,9 @@ export default function reservationsReducer(state=[], action){
       return action.payload.data
     case "REQUEST_RESERVATION":
     const reservedDiningExperienceId = action.payload.data.dining_experience_id
-    var reservedExperienceIndex = state.findIndex(e => e.id==action.payload.data.dining_experience_id)
+    var reservedExperienceIndex = state.findIndex(e => e.id==reservedDiningExperienceId)
     var newState = [...state.slice(0, reservedExperienceIndex), ...state.slice(reservedExperienceIndex+1)]
+    debugger
       return newState
     case "DELETE_RESERVATION":
       return {}

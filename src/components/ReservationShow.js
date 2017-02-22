@@ -8,12 +8,11 @@ class ReservationShow extends Component {
     constructor(props) {
         super(props)
     }
-    componentDidMount(prop){
+    componentDidMount(props){
       this.props.fetchMyReservations()
     }
 
     render() {
-      
       if (this.props.myReservations.length > 0 ){
         return (
 
@@ -21,7 +20,7 @@ class ReservationShow extends Component {
 
               return (
                 <div key={i}>
-                  <li> {reservation.status}: {reservation.dining_experience.title} </li>
+                  <li> {reservation.dining_experience.title} </li>
                   <li> {reservation.dining_experience.length} </li>
                   <li> {reservation.dining_experience.price} </li>
                   <li> {reservation.dining_experience.description} </li>
