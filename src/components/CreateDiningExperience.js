@@ -37,7 +37,7 @@ handleSubmit(event){
               <div className="form-group">
                 <label className="control-label col-sm-2" htmlFor="title">Title:</label>
                 <div className="col-sm-10">
-                  <textarea className="form-control" ref="title" placeholder="Enter a Creative Title" />
+                  <textarea className="form-control" ref="title" placeholder="Enter a Title" />
                 </div>
               </div>
 
@@ -45,7 +45,7 @@ handleSubmit(event){
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="description">Description:</label>
                   <div className="col-sm-10">
-                    <textarea className="form-control" ref="description" placeholder="This is a wonderful dining experience." />
+                    <textarea className="form-control" ref="description" placeholder="Dining Experience Details" />
                   </div>
                 </div>
 
@@ -62,7 +62,7 @@ handleSubmit(event){
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="length">Length:</label>
                   <div className="col-sm-10">
-                    <input className="form-control" ref="length" placeholder="Enter Number Hours of this Dining Experience"/>
+                    <input className="form-control" ref="length" placeholder="Enter Number Hours of This Dining Experience"/>
                   </div>
                 </div>
 
