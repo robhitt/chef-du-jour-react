@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { browserHistory } from 'react-router'
 
-axios.defaults.baseURL = 'http://localhost:8080/api/v1'
+axios.defaults.baseURL = 'https://quiet-depths-25869.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'http://localhost:8080/api/v1'
 axios.defaults.headers.common['AUTHORIZATION'] = sessionStorage.getItem('jwt')
 
 export const loginUser = (loginParams) => {
