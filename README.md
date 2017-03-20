@@ -14,4 +14,4 @@ Team: [Rob Hitt](https://github.com/robhitt), [Josh Pann](https://github.com/jmp
 - The rails back-end can be found here:  [chef-du-jour-rails](https://github.com/Joll59/chef-du-jour-rails-api)
 
 ## Live on heroku!
-[ChefDuJour](chefdujour.herokuapp.com)
+[Chef Du Jour](https://chefdujour.herokuapp.com)
