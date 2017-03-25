@@ -40,8 +40,6 @@ export default (
     <Route path="dining_experiences">
       <Route path=":id" component={DiningExperienceShow} onEnter ={ requireLogin }/>
     </Route>
-
-
   </Route>
 )
 

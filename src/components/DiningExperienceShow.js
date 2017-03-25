@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { diningExperienceShow } from '../actions/index'
+import React, {Component} from 'react'
+import {diningExperienceShow} from '../actions/index'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
