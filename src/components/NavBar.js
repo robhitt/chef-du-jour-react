@@ -46,9 +46,9 @@ renderExperience() {
 
   render(){
     return(
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default square-nav">
         <div className="container-fluid">
-          <div className="nav navbar-nav">
+          <div className="nav navbar-nav logo-valign">
             <Link to='/'><img src={'http://i63.tinypic.com/2hoycmq.png'} alt="Chef Du Jour Logo" className="vertical-helper" /></Link>
           </div>
               {this.renderExperience()}

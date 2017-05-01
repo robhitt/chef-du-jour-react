@@ -249,3 +249,14 @@
 .panel-no-border{
   border: 0;
 }
+
+/* align logo on main page nav bar */
+.logo-valign {
+  position: relative;
+  top: 3px;
+}
+
+/* navbar touchest all 90% corners */
+.square-nav {
+  border-radius: 0;
+}
